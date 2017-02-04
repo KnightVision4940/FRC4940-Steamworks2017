@@ -11,7 +11,7 @@
       <property name="path[29]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Boiler\1ftH13ftD3Angle0Brightness.jpg"/>
       <property name="path[12]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Boiler\1ftH6ftD3Angle0Brightness.jpg"/>
       <property name="path[15]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Boiler\1ftH7ftD3Angle0Brightness.jpg"/>
-      <property name="index" value="1"/>
+      <property name="index" value="0"/>
       <property name="path[18]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Boiler\1ftH8ftD3Angle0Brightness.jpg"/>
       <property name="path[0]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Boiler\1ftH2ftD0Angle0Brightness.jpg"/>
       <property name="path[3]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Boiler\1ftH3ftD3Angle0Brightness.jpg"/>
@@ -73,18 +73,36 @@
         <value>65.0</value>
       </grip:Input>
       <grip:Input step="2" socket="2">
-        <value>0</value>
+        <value>0.0</value>
       </grip:Input>
       <grip:Input step="2" socket="3">
-        <value>0</value>
+        <value>0.0</value>
       </grip:Input>
       <grip:Input step="2" socket="4">
-        <value>1000</value>
+        <value>1000.0</value>
       </grip:Input>
       <grip:Input step="2" socket="5">
-        <value>0</value>
+        <value>0.0</value>
       </grip:Input>
       <grip:Input step="2" socket="6">
+        <value>1000.0</value>
+      </grip:Input>
+      <grip:Input step="2" socket="7">
+        <value>
+          <int>0</int>
+          <int>100</int>
+        </value>
+      </grip:Input>
+      <grip:Input step="2" socket="8">
+        <value>1000000</value>
+      </grip:Input>
+      <grip:Input step="2" socket="9">
+        <value>0</value>
+      </grip:Input>
+      <grip:Input step="2" socket="10">
+        <value>0</value>
+      </grip:Input>
+      <grip:Input step="2" socket="11">
         <value>1000</value>
       </grip:Input>
       <grip:Output step="2" socket="0" previewed="true"/>
@@ -92,21 +110,33 @@
   </steps>
   <connections>
     <grip:Connection>
-      <grip:Output step="1" socket="0" previewed="true"/>
-      <grip:Input step="2" socket="0"/>
+      <grip:Output source="0" socket="0" previewed="true"/>
+      <grip:Input step="0" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="0" socket="0" previewed="true"/>
       <grip:Input step="1" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output source="0" socket="0" previewed="true"/>
-      <grip:Input step="0" socket="0"/>
+      <grip:Output step="1" socket="0" previewed="true"/>
+      <grip:Input step="2" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
     <teamNumber>0</teamNumber>
     <publishAddress></publishAddress>
     <deployAddress></deployAddress>
+    <deployDir>/home/lvuser</deployDir>
+    <deployUser>lvuser</deployUser>
+    <deployJavaHome>/usr/local/frc/JRE/</deployJavaHome>
+    <deployJvmOptions>-Xmx50m -XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryError -XX:MaxNewSize=16m</deployJvmOptions>
   </settings>
+  <codeGenerationSettings>
+    <language>Java</language>
+    <className>GripPipeline</className>
+    <implementWpilibPipeline>false</implementWpilibPipeline>
+    <saveDir>C:\Users\KnightVision\Documents\Code\FRC Robots\FRC4940-Steamworks2017\src\com\frc4940\steamworks2017</saveDir>
+    <packageName>com.frc4940.steamworks2017</packageName>
+    <moduleName>grip</moduleName>
+  </codeGenerationSettings>
 </grip:Pipeline>

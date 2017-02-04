@@ -1,0 +1,144 @@
+<grip:Pipeline>
+  <sources>
+    <grip:MultiImageFile>
+      <property name="path[2]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH2ftD0Angle0Brightness.jpg"/>
+      <property name="path[5]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH3ftD0Angle0Brightness.jpg"/>
+      <property name="path[8]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH4ftD2Angle0Brightness.jpg"/>
+      <property name="path[12]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH5ftD3Angle0Brightness.jpg"/>
+      <property name="path[15]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH8ftD0Angle0Brightness.jpg"/>
+      <property name="index" value="1"/>
+      <property name="path[0]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH1ftD0Angle0Brightness.jpg"/>
+      <property name="path[3]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH2ftD1Angle0Brightness.jpg"/>
+      <property name="path[6]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH3ftD2Angle0Brightness.jpg"/>
+      <property name="path[9]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH4ftD3Angle0Brightness.jpg"/>
+      <property name="path[10]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH5ftD0Angle0Brightness.jpg"/>
+      <property name="path[13]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH6ftD0Angle0Brightness.jpg"/>
+      <property name="path[16]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH9ftD0Angle0Brightness.jpg"/>
+      <property name="numImages" value="17"/>
+      <property name="path[1]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH1ftD1Angle0Brightness.jpg"/>
+      <property name="path[4]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH2ftD2Angle0Brightness.jpg"/>
+      <property name="path[7]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH4ftD0Angle0Brightness.jpg"/>
+      <property name="path[11]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH5ftD2Angle0Brightness.jpg"/>
+      <property name="path[14]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH7ftD0Angle0Brightness.jpg"/>
+    </grip:MultiImageFile>
+  </sources>
+  <steps>
+    <grip:Step name="HSV Threshold">
+      <grip:Input step="0" socket="0"/>
+      <grip:Input step="0" socket="1">
+        <value>
+          <double>62.58993011584385</double>
+          <double>100.13652463008111</double>
+        </value>
+      </grip:Input>
+      <grip:Input step="0" socket="2">
+        <value>
+          <double>207.91366651332635</double>
+          <double>255.0</double>
+        </value>
+      </grip:Input>
+      <grip:Input step="0" socket="3">
+        <value>
+          <double>51.97841908863122</double>
+          <double>255.0</double>
+        </value>
+      </grip:Input>
+      <grip:Output step="0" socket="0" previewed="true"/>
+    </grip:Step>
+    <grip:Step name="Resize Image">
+      <grip:Input step="1" socket="0"/>
+      <grip:Input step="1" socket="1">
+        <value>320.0</value>
+      </grip:Input>
+      <grip:Input step="1" socket="2">
+        <value>240.0</value>
+      </grip:Input>
+      <grip:Input step="1" socket="3">
+        <value>CUBIC</value>
+      </grip:Input>
+      <grip:Output step="1" socket="0" previewed="false"/>
+    </grip:Step>
+    <grip:Step name="Find Contours">
+      <grip:Input step="2" socket="0"/>
+      <grip:Input step="2" socket="1">
+        <value>false</value>
+      </grip:Input>
+      <grip:Output step="2" socket="0" previewed="true"/>
+    </grip:Step>
+    <grip:Step name="Filter Contours">
+      <grip:Input step="3" socket="0"/>
+      <grip:Input step="3" socket="1">
+        <value>65.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="2">
+        <value>0.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="3">
+        <value>0.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="4">
+        <value>1000.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="5">
+        <value>0.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="6">
+        <value>1000.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="7">
+        <value>
+          <double>0.0</double>
+          <double>100.0</double>
+        </value>
+      </grip:Input>
+      <grip:Input step="3" socket="8">
+        <value>1000000.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="9">
+        <value>0.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="10">
+        <value>0.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="11">
+        <value>1000.0</value>
+      </grip:Input>
+      <grip:Output step="3" socket="0" previewed="true"/>
+    </grip:Step>
+  </steps>
+  <connections>
+    <grip:Connection>
+      <grip:Output step="2" socket="0" previewed="true"/>
+      <grip:Input step="3" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="1" socket="0" previewed="false"/>
+      <grip:Input step="2" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output source="0" socket="0" previewed="false"/>
+      <grip:Input step="0" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="0" socket="0" previewed="true"/>
+      <grip:Input step="1" socket="0"/>
+    </grip:Connection>
+  </connections>
+  <settings>
+    <teamNumber>0</teamNumber>
+    <publishAddress></publishAddress>
+    <deployAddress></deployAddress>
+    <deployDir>/home/lvuser</deployDir>
+    <deployUser>lvuser</deployUser>
+    <deployJavaHome>/usr/local/frc/JRE/</deployJavaHome>
+    <deployJvmOptions>-Xmx50m -XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryError -XX:MaxNewSize=16m</deployJvmOptions>
+  </settings>
+  <codeGenerationSettings>
+    <language>Java</language>
+    <className>GripPipeline</className>
+    <implementWpilibPipeline>true</implementWpilibPipeline>
+    <saveDir>C:\Users\KnightVision\Documents\Code\FRC Robots\FRC4940-Steamworks2017\src\com\frc4940\steamworks2017</saveDir>
+    <packageName>com.frc4940.steamworks2017</packageName>
+    <moduleName>grip</moduleName>
+  </codeGenerationSettings>
+</grip:Pipeline>
