@@ -34,27 +34,23 @@ public class Xbox {
 	    } else {
 	      return xbox.getRawAxis(5);
 	    }
+	    
 	  }
  
-private double getRawAxis1 (final int axis) {
-	return axis;}
 
 public double getx(Hand hand) {
     if (hand.equals(Hand.kLeft)) {
-      return getRawAxis0(0);
+      return xbox.getRawAxis(0);
     } else {
-      return getRawAxis1(5);
+      return xbox.getRawAxis(5);
     }
   }
-private double getRawAxis0( final int axis) {
-	return axis;
-}
 
 public boolean getBumper(Hand hand) {
     if (hand.equals(Hand.kLeft)) {
-      return getRawButton(5);
+      return xbox.getRawButton(5);
     } else {
-      return getRawButton(6);}}
+      return xbox.getRawButton(6);}}
 
 public boolean getTrigger(Hand hand) {
     return false;
@@ -64,55 +60,50 @@ public boolean getTop(Hand hand) {
     return false;
   }
 
-public boolean getRawButton(final int button) {
-    return getStickButton ((byte) button);
+public boolean getRawButton(Hand hand) {
+    return xbox.getStickButton (hand);
   }
-private boolean getStickButton(byte button) {
-	return false;
-}
+
 
 
 public double getTriggerAxis(Hand hand) {
     if (hand.equals(Hand.kLeft)) {
-      return getRawAxis(2);
+      return xbox.getRawAxis(2);
     } else {
-      return getRawAxis(3);
+      return xbox.getRawAxis(3);
     }
   }
-private double getRawAxis(int i) {
-	return 0;
-}
 
 public boolean getAButton() {
-    return getRawButton(1);
+    return xbox.getRawButton(1);
   }
 
 public boolean getBButton() {
-    return getRawButton(2);
+    return xbox.getRawButton(2);
   }
 
 public boolean getXButton() {
-    return getRawButton(3);
+    return xbox.getRawButton(3);
   }
 
 public boolean getYButton() {
-    return getRawButton(4);
+    return xbox.getRawButton(4);
   }
 
 public boolean getStickButton(Hand hand) {
     if (hand.equals(Hand.kLeft)) {
-      return getRawButton(9);
+      return xbox.getRawButton(9);
     } else {
-      return getRawButton(10);
+      return xbox.getRawButton(10);
     }
   }
 
 public boolean getBackButton() {
-    return getRawButton(7);
+    return xbox.getRawButton(7);
   }
 
 public boolean getStartButton() {
-    return getRawButton(8);
+    return xbox.getRawButton(8);
   }
 
  
@@ -120,7 +111,7 @@ public boolean getStartButton() {
     return getStickPOV(pov);
   }
 
-  private int getStickPOV(int pov) {
+  private int getStickPOV(final int pov) {
 	return 0;
 }
 public int getPOVCount() {
