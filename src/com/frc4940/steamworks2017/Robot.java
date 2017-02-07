@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import com.ctre.CANTalon; //currently unused; proper class to import to use the CAN speed controllers
+//import com.ctre.CANTalon; //currently unused; proper class to import to use the CAN speed controllers
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -48,7 +48,7 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("My Auto", customAuto);
 		SmartDashboard.putData("Auto choices", chooser);
 		
-		m_testMotor = new VictorSP(5);
+		m_testMotor = new VictorSP(0);
 		xbox = new Xbox(0);
 	}
 
@@ -102,6 +102,16 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
+		if(xbox.getAButton()){
+			m_testMotor.set(0.5);
+			System.out.println("FWD POWER");
+		}
+		else if(xbox.getBButton()){
+			m_testMotor.set(-0.5);
+			System.out.println("BWK POWER");
+		}
+		else
+			m_testMotor.set(0.0);
 	}
 	
 	/**
@@ -123,7 +133,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void testPeriodic() {
-		m_testMotor.set(xbox.getx(Hand.kLeft));
+		
 	}
 }
 //stew was here ;)

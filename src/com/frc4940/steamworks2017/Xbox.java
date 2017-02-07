@@ -7,9 +7,7 @@ import edu.wpi.first.wpilibj.hal.HAL;
 
 public class Xbox {
 
-	static XboxController xbox;
-
-	private Hand hand;
+	private XboxController xbox;
 
 	private int m_outputs;
 
@@ -18,16 +16,9 @@ public class Xbox {
 	private int m_leftRumble;
 
 	public Xbox(int port) {
-	    super ();
-	    xbox = new XboxController(port);
-	    hand = null; 
-	    if (hand.equals(Hand.kLeft)) {
-	      return;
-	    } else {
-	      return;
-	    }
-
+	    xbox = new XboxController(port); 
 	}
+	
  public double getY(Hand hand) {
 	    if (hand.equals(Hand.kLeft)) {
 	      return xbox.getRawAxis(1);
@@ -75,11 +66,11 @@ public double getTriggerAxis(Hand hand) {
   }
 
 public boolean getAButton() {
-    return xbox.getRawButton(1);
+    return xbox.getAButton();
   }
 
 public boolean getBButton() {
-    return xbox.getRawButton(2);
+    return xbox.getBButton();
   }
 
 public boolean getXButton() {
