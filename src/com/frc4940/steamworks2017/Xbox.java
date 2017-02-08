@@ -7,17 +7,13 @@ import edu.wpi.first.wpilibj.hal.HAL;
 
 public class Xbox {
 
-	public static XboxController xbox;
+	public static XboxController xbox = new XboxController(0);
 
 	public static int m_outputs;
 
 	public static short m_rightRumble;
 
 	public static int m_leftRumble;
-
-	public Xbox(int port) {
-	    xbox = new XboxController(port); 
-	}
 	
  public static double getY(Hand hand) {
 	    if (hand.equals(Hand.kLeft)) {
