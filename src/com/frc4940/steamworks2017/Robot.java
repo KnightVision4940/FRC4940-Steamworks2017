@@ -32,8 +32,8 @@ public class Robot extends IterativeRobot {
 	String autoSelected;
 	SendableChooser<String> chooser = new SendableChooser<>();
 	
-	VictorSP m_testMotor; //just a test motor
-	Xbox xbox;
+	Teleop teleop = new Teleop();
+	Auto auto = new Auto();
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -48,8 +48,7 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("My Auto", customAuto);
 		SmartDashboard.putData("Auto choices", chooser);
 		
-		m_testMotor = new VictorSP(0);
-		xbox = new Xbox(0);
+		
 	}
 
 	/**
@@ -102,30 +101,17 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
-		if(xbox.getAButton()){
-			m_testMotor.set(0.5);
-			System.out.println("FWD POWER");
-		}
-		else if(xbox.getBButton()){
-			m_testMotor.set(-0.5);
-			System.out.println("BWK POWER");
-		}
-		else
-			m_testMotor.set(0.0);
+		 teleop.run();
 	}
+	
+	
 	
 	/**
 	 * This function is called when test mode is initiated
 	 */
 	@Override
 	public void testInit() {
-		m_testMotor.set(-0.2);
-		Timer.delay(2);
-		m_testMotor.set(0.0);
-		Timer.delay(0.5);
-		m_testMotor.set(0.2);
-		Timer.delay(2);
-		m_testMotor.set(0.0);
+		
 	}
 
 	/**

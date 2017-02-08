@@ -7,19 +7,15 @@ import edu.wpi.first.wpilibj.hal.HAL;
 
 public class Xbox {
 
-	private XboxController xbox;
+	public static XboxController xbox = new XboxController(0);
 
-	private int m_outputs;
+	public static int m_outputs;
 
-	private short m_rightRumble;
+	public static short m_rightRumble;
 
-	private int m_leftRumble;
-
-	public Xbox(int port) {
-	    xbox = new XboxController(port); 
-	}
+	public static int m_leftRumble;
 	
- public double getY(Hand hand) {
+ public static double getY(Hand hand) {
 	    if (hand.equals(Hand.kLeft)) {
 	      return xbox.getRawAxis(1);
 	    } else {
@@ -29,7 +25,7 @@ public class Xbox {
 	  }
  
 
-public double getx(Hand hand) {
+public static double getx(Hand hand) {
     if (hand.equals(Hand.kLeft)) {
       return xbox.getRawAxis(0);
     } else {
@@ -37,27 +33,27 @@ public double getx(Hand hand) {
     }
   }
 
-public boolean getBumper(Hand hand) {
+public static boolean getBumper(Hand hand) {
     if (hand.equals(Hand.kLeft)) {
       return xbox.getRawButton(5);
     } else {
       return xbox.getRawButton(6);}}
 
-public boolean getTrigger(Hand hand) {
+public static boolean getTrigger(Hand hand) {
     return false;
 }
 
-public boolean getTop(Hand hand) {
+public static boolean getTop(Hand hand) {
     return false;
   }
 
-public boolean getRawButton(Hand hand) {
+public static boolean getRawButton(Hand hand) {
     return xbox.getStickButton (hand);
   }
 
 
 
-public double getTriggerAxis(Hand hand) {
+public static double getTriggerAxis(Hand hand) {
     if (hand.equals(Hand.kLeft)) {
       return xbox.getRawAxis(2);
     } else {
@@ -65,23 +61,23 @@ public double getTriggerAxis(Hand hand) {
     }
   }
 
-public boolean getAButton() {
+public static boolean getAButton() {
     return xbox.getAButton();
   }
 
-public boolean getBButton() {
+public static boolean getBButton() {
     return xbox.getBButton();
   }
 
-public boolean getXButton() {
+public static boolean getXButton() {
     return xbox.getRawButton(3);
   }
 
-public boolean getYButton() {
+public static boolean getYButton() {
     return xbox.getRawButton(4);
   }
 
-public boolean getStickButton(Hand hand) {
+public static boolean getStickButton(Hand hand) {
     if (hand.equals(Hand.kLeft)) {
       return xbox.getRawButton(9);
     } else {
@@ -89,56 +85,56 @@ public boolean getStickButton(Hand hand) {
     }
   }
 
-public boolean getBackButton() {
+public static boolean getBackButton() {
     return xbox.getRawButton(7);
   }
 
-public boolean getStartButton() {
+public static boolean getStartButton() {
     return xbox.getRawButton(8);
   }
 
  
-  public int getPOV(int pov) {
+  public static int getPOV(int pov) {
     return getStickPOV(pov);
   }
 
-  private int getStickPOV(final int pov) {
+  public static int getStickPOV(final int pov) {
 	return 0;
 }
-public int getPOVCount() {
+public static int getPOVCount() {
     return getStickPOVCount() ;
   }
 
-  private int getStickPOVCount() {
+  public static int getStickPOVCount() {
 	return 0;
 }
-public HIDType getType() {
+public static HIDType getType() {
     return HIDType.values()[getJoystickType()];
   }
 
-  private int getJoystickType() {
+  public static int getJoystickType() {
 	return 0;
 }
-public String getName() {
+public static String getName() {
     return getJoystickName();
   }
 
-  private String getJoystickName() {
+  public static String getJoystickName() {
 	return null;
 }
 
-  public void setOutput(int outputNumber, boolean value) {
+  public static void setOutput(int outputNumber, boolean value) {
 	    m_outputs = (m_outputs & ~(1 << (outputNumber - 1))) | ((value ? 1 : 0) << (outputNumber - 1));
 	    HAL.setJoystickOutputs((byte) m_outputs, m_leftRumble, m_rightRumble, m_rightRumble);
 	  }
 
-	  public void setOutputs(int value) {
+	  public static void setOutputs(int value) {
 	    m_outputs = value;
 	    HAL.setJoystickOutputs((byte)  m_outputs, m_leftRumble, m_rightRumble, m_rightRumble);
 	  }
 
 	 
-	  public void setRumble(RumbleType type, double value) {
+	  public static void setRumble(RumbleType type, double value) {
 	    if (value < 0) {
 	      value = 0;
 	    } else if (value > 1) {
