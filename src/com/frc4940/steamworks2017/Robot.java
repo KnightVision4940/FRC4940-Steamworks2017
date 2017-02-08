@@ -48,7 +48,7 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("My Auto", customAuto);
 		SmartDashboard.putData("Auto choices", chooser);
 		
-		m_testMotor = new VictorSP(0);
+		m_testMotor = new VictorSP(5);
 		xbox = new Xbox(0);
 	}
 
@@ -102,17 +102,19 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
-		if(xbox.getAButton()){
-			m_testMotor.set(0.5);
-			System.out.println("FWD POWER");
-		}
-		else if(xbox.getBButton()){
-			m_testMotor.set(-0.5);
-			System.out.println("BWK POWER");
-		}
-		else
-			m_testMotor.set(0.0);
+			if(xbox.getAButton()){
+				m_testMotor.set(0.5);
+				System.out.println("FWD POWER");
+			}
+			else if(xbox.getBButton()){
+				m_testMotor.set(-0.5);
+				System.out.println("BWK POWER");
+			}
+			else
+				m_testMotor.set(0.0); 
 	}
+	
+	
 	
 	/**
 	 * This function is called when test mode is initiated
