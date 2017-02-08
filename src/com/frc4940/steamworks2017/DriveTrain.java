@@ -1,9 +1,11 @@
 package com.frc4940.steamworks2017;
+import com.frc4940.steamworks2017.Map.Limit.PWM;
+
 import edu.wpi.first.wpilibj.RobotDrive;
 
 public class DriveTrain extends Teleop {
 //RobotDrive object
-	RobotDrive Wheels = new RobotDrive(1,2,3,4);
+	RobotDrive Wheels = new RobotDrive(PWM.LEFTBACKWHEEL,PWM.LEFTFRONTWHEEL,PWM.RIGHTBACKWHEEL,PWM.RIGHTFRONTWHEEL);
   
 	//Method for driving robot
 	//Should use in auto
