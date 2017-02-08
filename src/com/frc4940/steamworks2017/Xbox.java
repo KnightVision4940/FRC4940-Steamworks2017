@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.hal.HAL;
 
-public static class Xbox {
+public class Xbox {
 
 	public static XboxController xbox;
 
