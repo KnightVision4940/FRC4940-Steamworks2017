@@ -6,7 +6,7 @@
       <property name="path[8]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH4ftD2Angle0Brightness.jpg"/>
       <property name="path[12]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH5ftD3Angle0Brightness.jpg"/>
       <property name="path[15]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH8ftD0Angle0Brightness.jpg"/>
-      <property name="index" value="3"/>
+      <property name="index" value="10"/>
       <property name="path[0]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH1ftD0Angle0Brightness.jpg"/>
       <property name="path[3]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH2ftD1Angle0Brightness.jpg"/>
       <property name="path[6]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH3ftD2Angle0Brightness.jpg"/>
@@ -30,19 +30,19 @@
       <grip:Input step="0" socket="0"/>
       <grip:Input step="0" socket="1">
         <value>
-          <double>0.0</double>
-          <double>180.0</double>
+          <double>80.14342490941948</double>
+          <double>105.20811258971264</double>
         </value>
       </grip:Input>
       <grip:Input step="0" socket="2">
         <value>
-          <double>41.276976230333176</double>
-          <double>146.21159579566722</double>
+          <double>50.449642474702785</double>
+          <double>255.0</double>
         </value>
       </grip:Input>
       <grip:Input step="0" socket="3">
         <value>
-          <double>88.66906219677959</double>
+          <double>58.09352991821097</double>
           <double>255.0</double>
         </value>
       </grip:Input>
@@ -53,24 +53,24 @@
       <grip:Input step="1" socket="1">
         <value>false</value>
       </grip:Input>
-      <grip:Output step="1" socket="0" previewed="true"/>
+      <grip:Output step="1" socket="0" previewed="false"/>
     </grip:Step>
     <grip:Step name="Filter Contours">
       <grip:Input step="2" socket="0"/>
       <grip:Input step="2" socket="1">
-        <value>30.0</value>
+        <value>65.0</value>
       </grip:Input>
       <grip:Input step="2" socket="2">
         <value>0.0</value>
       </grip:Input>
       <grip:Input step="2" socket="3">
-        <value>15.0</value>
+        <value>0.0</value>
       </grip:Input>
       <grip:Input step="2" socket="4">
         <value>1000.0</value>
       </grip:Input>
       <grip:Input step="2" socket="5">
-        <value>20.0</value>
+        <value>0.0</value>
       </grip:Input>
       <grip:Input step="2" socket="6">
         <value>1000.0</value>
@@ -93,7 +93,7 @@
       <grip:Input step="2" socket="11">
         <value>1000.0</value>
       </grip:Input>
-      <grip:Output step="2" socket="0" previewed="true"/>
+      <grip:Output step="2" socket="0" previewed="false"/>
     </grip:Step>
     <grip:Step name="Convex Hulls">
       <grip:Input step="3" socket="0"/>
@@ -126,24 +126,24 @@
   </steps>
   <connections>
     <grip:Connection>
-      <grip:Output step="2" socket="0" previewed="true"/>
+      <grip:Output source="0" socket="0" previewed="true"/>
+      <grip:Input step="0" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="2" socket="0" previewed="false"/>
       <grip:Input step="3" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output source="1" socket="0" previewed="true"/>
-      <grip:Input step="0" socket="0"/>
+      <grip:Output step="0" socket="0" previewed="true"/>
+      <grip:Input step="1" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="3" socket="0" previewed="true"/>
       <grip:Input step="4" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output step="1" socket="0" previewed="true"/>
+      <grip:Output step="1" socket="0" previewed="false"/>
       <grip:Input step="2" socket="0"/>
-    </grip:Connection>
-    <grip:Connection>
-      <grip:Output step="0" socket="0" previewed="true"/>
-      <grip:Input step="1" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
