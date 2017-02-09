@@ -6,26 +6,32 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 public class Teleop {
 	
-	AnalogGyro gyroscope = new AnalogGyro(0);
+//	AnalogGyro gyroscope;
 
-	DriveTrain drive = new DriveTrain();
+	DriveTrain drive;
 	
-	BallscrewMotors ballscrew = new BallscrewMotors(0); 
+//	BallscrewMotors ballscrew;
+//	
+	public Teleop(){
+//		gyroscope = new AnalogGyro(0);
+		drive = new DriveTrain();
+//		ballscrew = new BallscrewMotors(0);
+	}
 	
 	public void run() {
-		drive._driveRobotSQ(Xbox.getTriggerAxis(Hand.kRight), Xbox.getTriggerAxis(Hand.kLeft));
+		drive._driveRobotSQ(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
 		
-		if(Xbox.getXButton()){
-			ballscrew.ballsscrew(1);
-		}
-		else if (Xbox.getYButton()){
-			ballscrew.ballsscrew(-1);
-		}
+//		if(Xbox.getXButton()){
+//			ballscrew.ballsscrew(1);
+//		}
+//		else if (Xbox.getYButton()){
+//			ballscrew.ballsscrew(-1);
+//		}
 	
 	}
 	
 	public void init() {
-		gyroscope.initGyro();
+//		gyroscope.initGyro();
 	}
 }
 
