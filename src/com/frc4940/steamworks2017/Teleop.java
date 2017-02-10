@@ -23,6 +23,9 @@ public class Teleop {
 		else if (Xbox.getYButton()){
 			ballscrew.ballsscrew(-1);
 		}
+		
+	
+			gear.gearholdertoggle(Xbox.getAButton());
 	
 	}
 	
@@ -31,7 +34,11 @@ public class Teleop {
 	}
 	
 	//control to toggle gear holder on/off
-
+	public void GearController(){
+		
+		
+		
+	}
 		}
 	
 	
