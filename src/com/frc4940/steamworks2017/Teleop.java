@@ -5,20 +5,22 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 public class Teleop {
 	
- static 	Gyroscope gyro = new Gyroscope(); 
-
-	DriveTrain drive;
+	private Gyroscope gyro;
+	private DriveTrain drive;
 	
 //	BallscrewMotors ballscrew;
-//	
+	
 	public Teleop(){
-//		gyroscope = new AnalogGyro(0);
 		drive = new DriveTrain();
+		gyro = new Gyroscope(); 
 //		ballscrew = new BallscrewMotors(0);
 	}
 	
 	public void run() {
 		drive._driveRobotSQ(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
+		gyro.calibrategyro();
+		gyro.printangle();
+		
 		
 //		if(Xbox.getXButton()){
 //			ballscrew.ballsscrew(1);
@@ -29,12 +31,8 @@ public class Teleop {
 	
 	}
 	
-	public void gyro(){
-		gyro.calibrategyro();
-		gyro.printangle();
-		
-		 
-	}
+
+	
 	
 	public void init() {
 		gyro.initGyro();

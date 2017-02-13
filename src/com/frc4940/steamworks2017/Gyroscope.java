@@ -16,10 +16,13 @@ public class Gyroscope {
 		return gyro.getRate();
 	}
 	
-	public void calibrate(){
+	public void calibrategyro(){
 		if (Xbox.getAButton() == true){
 			gyro.calibrate();
 		}
+	}
+	public void printangle(){
+		System.out.println(gyro.getAngle());
 	}
 	
 	public void initGyro(){
