@@ -1,12 +1,11 @@
 package com.frc4940.steamworks2017;
-import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 
 
 public class Teleop {
 	
-//	AnalogGyro gyroscope;
+ static 	Gyroscope gyro = new Gyroscope(); 
 
 	DriveTrain drive;
 	
@@ -30,8 +29,15 @@ public class Teleop {
 	
 	}
 	
+	public void gyro(){
+		gyro.calibrategyro();
+		gyro.printangle();
+		
+		 
+	}
+	
 	public void init() {
-//		gyroscope.initGyro();
+		gyro.initGyro();
 	}
 }
 

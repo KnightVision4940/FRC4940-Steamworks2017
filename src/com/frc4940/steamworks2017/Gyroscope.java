@@ -7,7 +7,7 @@ public class Gyroscope {
 		return gyro.getAngle();
 		
 	}	
-
+    
 
 	public void reset(){
 		gyro.reset();  
@@ -17,7 +17,9 @@ public class Gyroscope {
 	}
 	
 	public void calibrate(){
-		gyro.calibrate();
+		if (Xbox.getAButton() == true){
+			gyro.calibrate();
+		}
 	}
 	
 	public void initGyro(){
