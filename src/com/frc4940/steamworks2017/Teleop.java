@@ -12,7 +12,7 @@ public class Teleop {
 	
 //	BallscrewMotors ballscrew;
 	
-	BallscrewMotors ball_launch;
+	BallscrewMotors ball_launch = new BallscrewMotors(0,1);
 //	
 	public Teleop(){
 //		gyroscope = new AnalogGyro(0);

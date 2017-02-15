@@ -10,10 +10,10 @@ public class BallscrewMotors {
 //	ballscrew.set(speed);
  }
 
- public BallscrewMotors(int port){
-// ballscrew = new CANTalon(port); 
+ public BallscrewMotors(int CANport, int victorPort){
+// ballscrew = new CANTalon(CANport); 
 	 
-	 
+	 motorlauncher = new VictorSP(victorPort);
  }
 
  //The ball launcher motors in fort of the ballscrew
@@ -22,10 +22,7 @@ public class BallscrewMotors {
  
 }
 
-public void Motorlauncher(int port) {
-	motorlauncher = new VictorSP(port);
-	
-}
+
 
 
 	
