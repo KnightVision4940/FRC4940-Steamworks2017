@@ -22,7 +22,7 @@ public class GearHolder {
 //			gear.disable();
 		}
 		
-		//|||||||||||||||||||||||||
+		
 		wasPressed = isPressed; 
 
 	
