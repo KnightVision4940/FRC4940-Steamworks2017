@@ -11,6 +11,8 @@ public class Teleop {
 	DriveTrain drive;
 	
 //	BallscrewMotors ballscrew;
+	
+	BallscrewMotors ball_launch;
 //	
 	public Teleop(){
 //		gyroscope = new AnalogGyro(0);
@@ -23,9 +25,12 @@ public class Teleop {
 		
 //		if(Xbox.getXButton()){
 //			ballscrew.ballsscrew(1);
+			ball_launch.Motorlauncher(1);
+			
 //		}
 //		else if (Xbox.getYButton()){
 //			ballscrew.ballsscrew(-1);
+			ball_launch.Motorlauncher(-1);
 //		}
 	
 	}
