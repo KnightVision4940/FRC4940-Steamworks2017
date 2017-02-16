@@ -6,7 +6,7 @@
       <property name="path[8]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH4ftD2Angle0Brightness.jpg"/>
       <property name="path[12]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH5ftD3Angle0Brightness.jpg"/>
       <property name="path[15]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH8ftD0Angle0Brightness.jpg"/>
-      <property name="index" value="10"/>
+      <property name="index" value="0"/>
       <property name="path[0]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH1ftD0Angle0Brightness.jpg"/>
       <property name="path[3]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH2ftD1Angle0Brightness.jpg"/>
       <property name="path[6]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH3ftD2Angle0Brightness.jpg"/>
@@ -22,7 +22,7 @@
       <property name="path[14]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH7ftD0Angle0Brightness.jpg"/>
     </grip:MultiImageFile>
     <grip:Camera>
-      <property name="address" value="http://169.254.145.101"/>
+      <property name="address" value="http://rpi-4940.local:1180/?action=stream"/>
     </grip:Camera>
   </sources>
   <steps>
@@ -36,7 +36,7 @@
       </grip:Input>
       <grip:Input step="0" socket="2">
         <value>
-          <double>50.449642474702785</double>
+          <double>119.24460650347976</double>
           <double>255.0</double>
         </value>
       </grip:Input>
@@ -58,7 +58,7 @@
     <grip:Step name="Filter Contours">
       <grip:Input step="2" socket="0"/>
       <grip:Input step="2" socket="1">
-        <value>65.0</value>
+        <value>125.0</value>
       </grip:Input>
       <grip:Input step="2" socket="2">
         <value>0.0</value>
@@ -126,12 +126,16 @@
   </steps>
   <connections>
     <grip:Connection>
-      <grip:Output source="0" socket="0" previewed="true"/>
-      <grip:Input step="0" socket="0"/>
+      <grip:Output step="1" socket="0" previewed="false"/>
+      <grip:Input step="2" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="2" socket="0" previewed="false"/>
       <grip:Input step="3" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output source="1" socket="0" previewed="false"/>
+      <grip:Input step="0" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="0" socket="0" previewed="true"/>
@@ -140,10 +144,6 @@
     <grip:Connection>
       <grip:Output step="3" socket="0" previewed="true"/>
       <grip:Input step="4" socket="0"/>
-    </grip:Connection>
-    <grip:Connection>
-      <grip:Output step="1" socket="0" previewed="false"/>
-      <grip:Input step="2" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
