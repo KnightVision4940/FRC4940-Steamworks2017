@@ -1,8 +1,12 @@
 package com.frc4940.steamworks2017;
 
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import com.ctre.CANTalon; //currently unused; proper class to import to use the CAN speed controllers
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,6 +31,9 @@ public class Robot extends IterativeRobot {
 	final String customAuto = "My Auto";
 	String autoSelected;
 	SendableChooser<String> chooser = new SendableChooser<>();
+	
+	Teleop teleop = new Teleop();
+	Auto auto = new Auto();
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -40,6 +47,8 @@ public class Robot extends IterativeRobot {
 		chooser.addDefault("Default Auto", defaultAuto);
 		chooser.addObject("My Auto", customAuto);
 		SmartDashboard.putData("Auto choices", chooser);
+		
+		
 	}
 
 	/**
@@ -92,6 +101,17 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
+		 teleop.run();
+	}
+	
+	
+	
+	/**
+	 * This function is called when test mode is initiated
+	 */
+	@Override
+	public void testInit() {
+		
 	}
 
 	/**
@@ -99,6 +119,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void testPeriodic() {
+		
 	}
 }
 //stew was here ;)
