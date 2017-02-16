@@ -32,6 +32,7 @@ public class Robot extends IterativeRobot {
 	
 	Teleop teleop = new Teleop();
 	Auto auto = new Auto();
+	Vision vision = new Vision();
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -46,7 +47,7 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("My Auto", customAuto);
 		SmartDashboard.putData("Auto choices", chooser);
 		
-		
+		DashBoard.board();
 	}
 
 	/**
@@ -108,6 +109,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		 teleop.run();
+		 vision.run(teleop.getGyroAngle());
 	}
 	
 	

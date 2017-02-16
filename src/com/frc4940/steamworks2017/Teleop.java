@@ -19,8 +19,8 @@ public class Teleop {
 	
 	public void run() {
 		drive._driveRobotSQ(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
-		
-		gyro.printangle();
+//		
+//		gyro.printangle();
 		
 		if(Xbox.getXButton()){
 			ballscrew.ballsscrew(1);
@@ -36,6 +36,10 @@ public class Teleop {
 	
 	public void init() {
 		gyro.calibrategyro();
+	}
+	
+	public double getGyroAngle(){
+		return gyro.getAngle();
 	}
 }
 

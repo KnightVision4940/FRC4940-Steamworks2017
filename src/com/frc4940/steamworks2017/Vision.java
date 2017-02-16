@@ -1,20 +1,26 @@
 package com.frc4940.steamworks2017;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.opencv.core.Rect;
 import org.opencv.imgproc.Imgproc;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.networktables.NetworkTable;
+import edu.wpi.first.wpilibj.tables.ITable;
+import edu.wpi.first.wpilibj.tables.ITableListener;
 import edu.wpi.first.wpilibj.vision.VisionRunner;
 import edu.wpi.first.wpilibj.vision.VisionThread;
 
-public class Vision {
+public class Vision{
 	/**
 	 * VARIALBES
 	 */
 	//image size
-	NetworkTable nTable;
+	private NetworkTable rpiTable;
 	
 	private static final int I_WIDTH = 320;
 	private static final int I_HEIGHT = 240;
@@ -24,6 +30,7 @@ public class Vision {
 	private double centerY;						//centerY value of the target (0.0 is center of camera, 1.0 is top, -1.0 is bottom
 	private boolean isCentered;					//true if the target is centered.
 	private final Object imgLock;				//syncrhonization of image processing
+	
 	
 	/**
 	 * methods
@@ -35,10 +42,14 @@ public class Vision {
 		this.imgLock = new Object();
 		this.isCentered = false;
 		
-		this.initVision(); //initiallizes the vision processing
+		//initalizes network tables to listen from the rpi
+		this.rpiTable = NetworkTable.getTable("SmartDashboard");
+		
 	}
 	
-	protected void initVision(){
+	public void run(double angle){
+		rpiTable.putNumber("dsTime", angle);
+		System.out.println(rpiTable.getNumber("myValue", 4.2));
 		
 	}
 	
