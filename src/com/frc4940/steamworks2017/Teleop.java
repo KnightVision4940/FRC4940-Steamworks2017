@@ -1,10 +1,11 @@
 package com.frc4940.steamworks2017;
-import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 
 
 public class Teleop {
+	
+	GearHolder gear;
 	
 //	AnalogGyro gyroscope;
 
@@ -32,8 +33,11 @@ public class Teleop {
 //			ballscrew.ballsscrew(-1);
 			ball_launch.Motorlauncher(-1);
 //		}
+			gear.gearholdertoggle(Xbox.getAButton());
 	
 	}
+
+
 	
 	public void init() {
 //		gyroscope.initGyro();
