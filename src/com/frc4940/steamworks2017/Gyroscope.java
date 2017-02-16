@@ -1,7 +1,7 @@
 package com.frc4940.steamworks2017;
-import edu.wpi.first.wpilibj.AnalogGyro;
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 public class Gyroscope {
-	AnalogGyro gyro = new AnalogGyro(0);  
+	ADXRS450_Gyro gyro = new ADXRS450_Gyro();  
 	
 	public double getAngle(){
 		return gyro.getAngle();
@@ -17,19 +17,11 @@ public class Gyroscope {
 	}
 	
 	public void calibrategyro(){
-		if (Xbox.getAButton() == true){
-			gyro.calibrate();
-		}
+		gyro.calibrate();
 	}
 	public void printangle(){
-		System.out.println(gyro.getAngle());
+		System.out.println("GYRO ANGLE:" + gyro.getAngle());
 	}
-	
-	public void initGyro(){
-		gyro.initGyro(); 
-	}
-	
-	
 	
 }
 
