@@ -14,6 +14,8 @@ public class Vision {
 	 * VARIALBES
 	 */
 	//image size
+	NetworkTable nTable;
+	
 	private static final int I_WIDTH = 320;
 	private static final int I_HEIGHT = 240;
 	
