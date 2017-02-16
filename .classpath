@@ -11,5 +11,11 @@
 	<classpathentry kind="lib" path="lib/opencv.jar"/>
 	<classpathentry kind="lib" path="lib/WPILib.jar"/>
 	<classpathentry kind="lib" path="lib/CTRLib.jar"/>
+	<classpathentry kind="lib" path="C:/Users/KnightVision/wpilib/java/current/lib/CTRLib.jar"/>
+	<classpathentry kind="lib" path="libs/cscore.jar"/>
+	<classpathentry kind="lib" path="libs/CTRLib.jar"/>
+	<classpathentry kind="lib" path="libs/NetworkTables.jar"/>
+	<classpathentry kind="lib" path="libs/opencv.jar"/>
+	<classpathentry kind="lib" path="libs/WPILib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
