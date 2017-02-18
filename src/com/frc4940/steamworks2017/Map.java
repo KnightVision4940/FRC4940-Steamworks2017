@@ -17,6 +17,12 @@ public class Map {
 			public static final int RIGHTFRONTWHEEL = 3;
 			public static final int LEFTBACKWHEEL = 0;
 			public static final int RIGHTBACKWHEEL = 2;
+			public static final int LeftFront = 1;
+			public static final int RightFront = 3;
+			public static final int LeftBack = 0;
+			public static final int RightBack = 2;
+			public static final int RollerOne = 4;
+			public static final int RollerTwo = 5;
 			
 			public class CAN{
 				//Arm.java
