@@ -61,6 +61,14 @@ public static double getTriggerAxis(Hand hand) {
     }
   }
 
+public static double getTriggers(){
+	if(xbox.getRawAxis(2) > xbox.getRawAxis(3)){
+		return xbox.getRawAxis(2);
+	} else{
+		return -xbox.getRawAxis(3);
+	}
+}
+
 public static boolean getAButton() {
     return xbox.getAButton();
   }
