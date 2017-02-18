@@ -21,57 +21,13 @@
       <property name="path[11]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH5ftD2Angle0Brightness.jpg"/>
       <property name="path[14]" value="C:\Users\KnightVision\Documents\FRC Documents\2017\Vision Images\LED Peg\1ftH7ftD0Angle0Brightness.jpg"/>
     </grip:MultiImageFile>
-    <grip:Camera>
-      <property name="address" value="http://169.254.145.101"/>
-    </grip:Camera>
     <grip:MultiImageFile>
-      <property name="path[21]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_0.jpg"/>
-      <property name="path[24]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_3.jpg"/>
-      <property name="path[27]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_6.jpg"/>
-      <property name="path[40]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_19.jpg"/>
-      <property name="path[0]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_0.jpg"/>
-      <property name="path[11]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_11.jpg"/>
-      <property name="path[3]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_3.jpg"/>
-      <property name="path[14]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_14.jpg"/>
-      <property name="path[6]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_6.jpg"/>
-      <property name="path[17]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_17.jpg"/>
-      <property name="path[9]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_9.jpg"/>
-      <property name="path[30]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_9.jpg"/>
-      <property name="path[33]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_12.jpg"/>
-      <property name="path[36]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_15.jpg"/>
-      <property name="path[39]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_18.jpg"/>
-      <property name="path[20]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302398_0.jpg"/>
-      <property name="path[23]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_2.jpg"/>
-      <property name="path[26]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_5.jpg"/>
-      <property name="path[29]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_8.jpg"/>
-      <property name="path[10]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_10.jpg"/>
-      <property name="path[2]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_2.jpg"/>
-      <property name="path[13]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_13.jpg"/>
-      <property name="path[5]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_5.jpg"/>
-      <property name="path[16]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_16.jpg"/>
-      <property name="path[8]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_8.jpg"/>
-      <property name="path[19]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_19.jpg"/>
-      <property name="path[32]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_11.jpg"/>
-      <property name="path[35]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_14.jpg"/>
-      <property name="path[38]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_17.jpg"/>
-      <property name="index" value="40"/>
-      <property name="path[22]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_1.jpg"/>
-      <property name="path[25]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_4.jpg"/>
-      <property name="path[28]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_7.jpg"/>
-      <property name="path[1]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_1.jpg"/>
-      <property name="path[4]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_4.jpg"/>
-      <property name="path[12]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_12.jpg"/>
-      <property name="path[7]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_7.jpg"/>
-      <property name="path[15]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_15.jpg"/>
-      <property name="path[18]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302145_18.jpg"/>
-      <property name="numImages" value="41"/>
-      <property name="path[31]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_10.jpg"/>
-      <property name="path[34]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_13.jpg"/>
-      <property name="path[37]" value="C:\Users\KnightVision\Pictures\RPI vision testing\img1487302440_16.jpg"/>
+      <property name="numImages" value="3"/>
+      <property name="path[0]" value="C:\Users\KnightVision\Pictures\RPI vision testing\ledPicx\img1487307760_0.jpg"/>
+      <property name="path[1]" value="C:\Users\KnightVision\Pictures\RPI vision testing\ledPicx\img1487307877_0.jpg"/>
+      <property name="index" value="2"/>
+      <property name="path[2]" value="C:\Users\KnightVision\Pictures\RPI vision testing\ledPicx\img1487310417_0.jpg"/>
     </grip:MultiImageFile>
-    <grip:Camera>
-      <property name="deviceNumber" value="1"/>
-    </grip:Camera>
   </sources>
   <steps>
     <grip:Step name="Resize Image">
@@ -91,19 +47,19 @@
       <grip:Input step="1" socket="0"/>
       <grip:Input step="1" socket="1">
         <value>
-          <double>59.352515798678496</double>
-          <double>122.66211213512226</double>
+          <double>108.9928052408232</double>
+          <double>128.80546856252002</double>
         </value>
       </grip:Input>
       <grip:Input step="1" socket="2">
         <value>
           <double>0.0</double>
-          <double>128.80545245095735</double>
+          <double>255.0</double>
         </value>
       </grip:Input>
       <grip:Input step="1" socket="3">
         <value>
-          <double>70.3237384557724</double>
+          <double>32.10431654676259</double>
           <double>255.0</double>
         </value>
       </grip:Input>
@@ -156,19 +112,47 @@
       </grip:Input>
       <grip:Output step="3" socket="0" previewed="true"/>
     </grip:Step>
+    <grip:Step name="NTPublish ContoursReport">
+      <grip:Input step="4" socket="0"/>
+      <grip:Input step="4" socket="1">
+        <value>myContoursReport</value>
+      </grip:Input>
+      <grip:Input step="4" socket="2">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="4" socket="3">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="4" socket="4">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="4" socket="5">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="4" socket="6">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="4" socket="7">
+        <value>true</value>
+      </grip:Input>
+    </grip:Step>
   </steps>
   <connections>
-    <grip:Connection>
-      <grip:Output step="1" socket="0" previewed="true"/>
-      <grip:Input step="2" socket="0"/>
-    </grip:Connection>
     <grip:Connection>
       <grip:Output step="0" socket="0" previewed="false"/>
       <grip:Input step="1" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output source="2" socket="0" previewed="true"/>
+      <grip:Output source="1" socket="0" previewed="true"/>
       <grip:Input step="0" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="3" socket="0" previewed="true"/>
+      <grip:Input step="4" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="1" socket="0" previewed="true"/>
+      <grip:Input step="2" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="2" socket="0" previewed="false"/>
