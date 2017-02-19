@@ -9,15 +9,12 @@ public class Auto {
 	GearHolder gear = new GearHolder();
 
 	BallscrewMotors ballscrewup = new BallscrewMotors(1,2,3);
-	BallscrewMotors launchermotors = new BallscrewMotors(1,2,3);
 	
 	//just driving foward
 	public void driveForward(){
 		drive._driveRobot(1, 0);
 		Timer.delay(7);
-
-	BallscrewMotors ballscrewup = new BallscrewMotors(1,2, 1);
-	BallscrewMotors launchermotors = new BallscrewMotors(1,2, 1);
+	}
 	
 	int autoMode = 0; 
 	
@@ -31,13 +28,12 @@ public class Auto {
 			drive._driveRobot(1, -1);
 			Timer.delay(10);
 			ballscrewup.ballsscrew(1);
-			launchermotors.Motorlauncher1(1);
-			launchermotors.Motorlauncher2(1);
+			ballscrewup.Motorlauncher1(1);
+			ballscrewup.Motorlauncher2(1);
 		}
 
-		else if (autoMode == 2);
+		
 
-	}
 
 		else if (autoMode == 2){
 			drive._driveRobot(1, 0);
@@ -45,8 +41,8 @@ public class Auto {
 			drive._driveRobot(1, -1);
 			Timer.delay(5);
 			ballscrewup.ballsscrew(1);
-			launchermotors.Motorlauncher1(1);
-			launchermotors.Motorlauncher2(1);
+			ballscrewup.Motorlauncher1(1);
+			ballscrewup.Motorlauncher2(1);
 		}
 		else if (autoMode == 3){
 			drive._driveRobot(1, 0);
@@ -54,8 +50,8 @@ public class Auto {
 			drive._driveRobot(1, -1);
 			Timer.delay(3);
 			ballscrewup.ballsscrew(1);
-			launchermotors.Motorlauncher1(1);
-			launchermotors.Motorlauncher2(1);
+			ballscrewup.Motorlauncher1(1);
+			ballscrewup.Motorlauncher2(1);
 		}
 		else if (autoMode == 4){
 			drive._driveRobot(1, 0);
@@ -63,8 +59,8 @@ public class Auto {
 			drive._driveRobot(1, 1);
 			Timer.delay(10);
 			ballscrewup.ballsscrew(1);
-			launchermotors.Motorlauncher1(1);
-			launchermotors.Motorlauncher2(1);	
+			ballscrewup.Motorlauncher1(1);
+			ballscrewup.Motorlauncher2(1);	
 		}
 		else if (autoMode == 5){
 			drive._driveRobot(1, 0);
@@ -72,8 +68,8 @@ public class Auto {
 			drive._driveRobot(1, 1);
 			Timer.delay(5);
 			ballscrewup.ballsscrew(1);
-			launchermotors.Motorlauncher1(1);
-			launchermotors.Motorlauncher2(1);
+			ballscrewup.Motorlauncher1(1);
+			ballscrewup.Motorlauncher2(1);
 		}
 		else if (autoMode == 6){
 			drive._driveRobot(1, 0);
@@ -81,8 +77,8 @@ public class Auto {
 			drive._driveRobot(1, 1);
 			Timer.delay(3);
 			ballscrewup.ballsscrew(1);
-			launchermotors.Motorlauncher1(1);
-			launchermotors.Motorlauncher2(1);		
+			ballscrewup.Motorlauncher1(1);
+			ballscrewup.Motorlauncher2(1);		
 	    }
 		else if (autoMode == 7){ 
 			
@@ -90,6 +86,7 @@ public class Auto {
 		else if (autoMode == 8){
 			
 		}	
+	}
 
 
 	
@@ -101,8 +98,8 @@ public class Auto {
 		drive._driveRobot(1, -1);
 		Timer.delay(10);
 		ballscrewup.ballsscrew(1);
-		launchermotors.Motorlauncher1(1);
-		launchermotors.Motorlauncher2(1);
+		ballscrewup.Motorlauncher1(1);
+		ballscrewup.Motorlauncher2(1);
 		Timer.delay(5);
 
 	}
@@ -114,8 +111,8 @@ public class Auto {
 		drive._driveRobot(1, -1);
 		Timer.delay(5);
 		ballscrewup.ballsscrew(1);
-		launchermotors.Motorlauncher1(1);
-		launchermotors.Motorlauncher2(1);
+		ballscrewup.Motorlauncher1(1);
+		ballscrewup.Motorlauncher2(1);
 		Timer.delay(5);
 	}
 	
@@ -127,8 +124,8 @@ public class Auto {
 		drive._driveRobot(1, -1);
 		Timer.delay(3);
 		ballscrewup.ballsscrew(1);
-		launchermotors.Motorlauncher1(1);
-		launchermotors.Motorlauncher2(1);
+		ballscrewup.Motorlauncher1(1);
+		ballscrewup.Motorlauncher2(1);
 		Timer.delay(5);
 	}
 
@@ -139,8 +136,8 @@ public class Auto {
 		drive._driveRobot(1, 1);
 		Timer.delay(10);
 		ballscrewup.ballsscrew(1);
-		launchermotors.Motorlauncher1(1);
-		launchermotors.Motorlauncher2(1);
+		ballscrewup.Motorlauncher1(1);
+		ballscrewup.Motorlauncher2(1);
 		Timer.delay(5);
 	}
 	
@@ -150,8 +147,8 @@ public class Auto {
 		drive._driveRobot(1, 1);
 		Timer.delay(5);
 		ballscrewup.ballsscrew(1);
-		launchermotors.Motorlauncher1(1);
-		launchermotors.Motorlauncher2(1);
+		ballscrewup.Motorlauncher1(1);
+		ballscrewup.Motorlauncher2(1);
 		Timer.delay(5);
 	}
 	
@@ -161,8 +158,8 @@ public class Auto {
 		drive._driveRobot(1, 1);
 		Timer.delay(3);
 		ballscrewup.ballsscrew(1);
-		launchermotors.Motorlauncher1(1);
-		launchermotors.Motorlauncher2(1);
+		ballscrewup.Motorlauncher1(1);
+		ballscrewup.Motorlauncher2(1);
 		Timer.delay(5);
 	}
 	
