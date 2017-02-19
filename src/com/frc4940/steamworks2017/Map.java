@@ -14,13 +14,16 @@ public class Map {
 		
 	public class PWM{		
 			//Drivetrain.java
-			public static final int LEFTFRONTWHEEL = 2;
-			public static final int RIGHTFRONTWHEEL = 0;
-			public static final int LEFTBACKWHEEL = 3;
-			public static final int RIGHTBACKWHEEL = 1;
-			public static final int BALLSCREW_PORT = 4;
+			public static final int LEFTFRONTWHEEL = 1;
+			public static final int RIGHTFRONTWHEEL = 3;
+			public static final int LEFTBACKWHEEL = 0;
+			public static final int RIGHTBACKWHEEL = 2;
+			public static final int ROLLER_1 = 4;
+			public static final int ROLLER_2 = 5;
 	}
 	public class CAN{
+		public static final int BALLSCREW = 0;
+		public static final int WINCH = 1;
 	}
 	
 	public class Auto{  
