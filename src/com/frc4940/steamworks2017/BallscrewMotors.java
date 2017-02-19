@@ -6,20 +6,12 @@ public class BallscrewMotors {
 	
 	
 public BallscrewMotors(int CANport, int victorPort){
-<<<<<<< HEAD
 	 ballscrew = new CANTalon(CANport); 
-=======
-//	 ballscrew = new CANTalon(CANport); 
->>>>>>> dev
 		 
 		 motorlauncher = new VictorSP(victorPort);
 	 }
 	
-<<<<<<< HEAD
  CANTalon ballscrew;
-=======
-// CANTalon ballscrew;
->>>>>>> dev
  VictorSP motorlauncher;
  public void ballsscrew(double speed){
 	ballscrew.set(speed);
@@ -28,13 +20,14 @@ public BallscrewMotors(int CANport, int victorPort){
  
 
  //The ball launcher motors in fort of the ballscrew
- public void Motorlauncher(double speed){
+ public void Motorlauncher1(double speed){
 	 motorlauncher.set(speed);
  
 }
+ public void Motorlauncher2(double speed){
+	 motorlauncher.set(speed);
 
-
-
+ }
 }
 
 
