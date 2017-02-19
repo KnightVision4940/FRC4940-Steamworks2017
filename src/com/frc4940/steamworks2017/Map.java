@@ -28,7 +28,14 @@ public class Map {
 	
 	public class Auto{ 
 		public static final int DRIVE_FORWARD = 0;
-		public static final int TEST_AUTO = 999;
+		public static final int LEFTBOILERFAR = 1;
+		public static final int LEFTBOILERMID = 2;
+		public static final int LEFTBOILERCLOSE = 3;
+		public static final int RIGHTBOILERFAR = 4;
+		public static final int RIGHTBOILERMID = 5;
+		public static final int RIGHTBOILERCLOSE = 6;
+		public static final int GEARONE = 7;
+		public static final int GEARTWO = 8;
 	}
 	
 	public class Encoder{
