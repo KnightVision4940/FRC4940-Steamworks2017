@@ -12,49 +12,37 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 public class DashBoard {
 
 	SmartDashboard dashboard; 
-	SendableChooser <String> chooser;
+	public DashBoard(){
+		SendableChooser autoChooser = new SendableChooser();
+		autoChooser.addDefault("Drive Forward" , Map.Auto.DRIVE_FORWARD);
+		autoChooser.addObject("Gear (one)", Map.Auto.GEARONE);
+		SmartDashboard.putData("Auto mode chooser", autoChooser);
+	}
+	
+	public SendableChooser getChooser(){
+		return autoChooser;
+	}
 		
 	public void board(){	
 		 
-SmartDashboard.putNumber("drive left" ,8);
-SmartDashboard.putNumber("Climbing Encoder", 9);
-SmartDashboard.putNumber("drive right" ,7);
-SmartDashboard.putNumber("ballscrew" , 4);
-SmartDashboard.putNumber("balllauncher", 2);
-SmartDashboard.putNumber("speed of drive train", 1-4);
-SmartDashboard.putNumber("directionLeft", 10 );
-SmartDashboard.putNumber("directionRight", 11 );
-SmartDashboard.putNumber("gyro angle", 13 );
-SmartDashboard.putNumber("encoder drive",14);
-
-
-SmartDashboard.putBoolean("auto one", true);
-SmartDashboard.putBoolean("auto two", false);
-SmartDashboard.putBoolean("auto three", false);
-SmartDashboard.putBoolean("auto four", false);	
-SmartDashboard.putBoolean("auto five", false);
-SmartDashboard.putBoolean("auto six", false);
-
-<<<<<<< Updated upstream
-	
-	
-	
-	}
-}
-=======
-	}
-
-	public class Robot extends IterativeRobot {
-	
-Command autonomousCommand;
-SendableChooser<Object> autoChooser;{
-
-autoChooser = new SendableChooser<Object>();
-autoChooser.addDefault("Defualt Programer" , new Object());
-autoChooser.addObject("Expermental", new EventObject(autoChooser));
-SmartDashboard.putData("Auto mode chooser", autoChooser);
+		SmartDashboard.putNumber("drive left" ,8);
+		SmartDashboard.putNumber("Climbing Encoder", 9);
+		SmartDashboard.putNumber("drive right" ,7);
+		SmartDashboard.putNumber("ballscrew" , 4);
+		SmartDashboard.putNumber("balllauncher", 2);
+		SmartDashboard.putNumber("speed of drive train", 1-4);
+		SmartDashboard.putNumber("directionLeft", 10 );
+		SmartDashboard.putNumber("directionRight", 11 );
+		SmartDashboard.putNumber("gyro angle", 13 );
+		SmartDashboard.putNumber("encoder drive",14);
+		
+		
+		SmartDashboard.putBoolean("auto one", true);
+		SmartDashboard.putBoolean("auto two", false);
+		SmartDashboard.putBoolean("auto three", false);
+		SmartDashboard.putBoolean("auto four", false);	
+		SmartDashboard.putBoolean("auto five", false);
+		SmartDashboard.putBoolean("auto six", false);
 
 	}
 }
-	}
->>>>>>> Stashed changes
