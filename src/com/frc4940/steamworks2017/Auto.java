@@ -3,18 +3,31 @@ package com.frc4940.steamworks2017;
 import edu.wpi.first.wpilibj.Timer;
 //D@nte was here
 public class Auto {
-
-
-
+	
+	
 	DriveTrain drive = new DriveTrain();
 	GearHolder gear = new GearHolder();
-	BallscrewMotors ballscrewup = new BallscrewMotors(1,2);
-	BallscrewMotors launchermotors = new BallscrewMotors(1,2);
+	BallscrewMotors ballscrewup = new BallscrewMotors(1,2, 1);
+	BallscrewMotors launchermotors = new BallscrewMotors(1,2, 1);
 	
-	//just driving foward
-	public void driveForward(double _Speed, double _Turn){
-		drive._driveRobot(1, 0);
+	int autoMode = 0; 
+	
+	public void run(){
+		if (autoMode == 0){
+			drive._driveRobot(1, 0);
+		}
+		else if (autoMode == 1){
+			drive._driveRobot(1, 0);
+			Timer.delay(3);
+			drive._driveRobot(1, -1);
+			Timer.delay(10);
+			ballscrewup.ballsscrew(1);
+			launchermotors.Motorlauncher1(1);
+			launchermotors.Motorlauncher2(1);
+		}
+		else if (autoMode == 2)
 	}
+    
 
 	//ball points left
 	public void leftbolierfar(double _Speed,  double _Turn){
