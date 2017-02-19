@@ -8,16 +8,18 @@ public class Auto {
 
 	DriveTrain drive = new DriveTrain();
 	GearHolder gear = new GearHolder();
-	BallscrewMotors ballscrewup = new BallscrewMotors(1,2);
-	BallscrewMotors launchermotors = new BallscrewMotors(1,2);
+	BallscrewMotors ballscrewup = new BallscrewMotors(1,2,3);
+	BallscrewMotors launchermotors = new BallscrewMotors(1,2,3);
 	
 	//just driving foward
-	public void driveForward(double _Speed, double _Turn){
+	public void driveForward(){
 		drive._driveRobot(1, 0);
+		Timer.delay(7);
 	}
 
+	
 	//ball points left
-	public void leftbolierfar(double _Speed,  double _Turn){
+	public void leftbolierfar(){
 		drive._driveRobot(1, 0);
 		Timer.delay(3);
 		drive._driveRobot(1, -1);
@@ -25,11 +27,12 @@ public class Auto {
 		ballscrewup.ballsscrew(1);
 		launchermotors.Motorlauncher1(1);
 		launchermotors.Motorlauncher2(1);
-		
-}
+		Timer.delay(5);
+
+	}
 
 
-	public void leftboliermid(double _Speed,  double _Turn){
+	public void leftboliermid(){
 		drive._driveRobot(1, 0);
 		Timer.delay(3);
 		drive._driveRobot(1, -1);
@@ -37,11 +40,12 @@ public class Auto {
 		ballscrewup.ballsscrew(1);
 		launchermotors.Motorlauncher1(1);
 		launchermotors.Motorlauncher2(1);
-}
+		Timer.delay(5);
+	}
 	
 	
 
-	public void leftbolierclose(double _Speed,  double _Turn){
+	public void leftbolierclose(){
 		drive._driveRobot(1, 0);
 		Timer.delay(3);
 		drive._driveRobot(1, -1);
@@ -49,12 +53,13 @@ public class Auto {
 		ballscrewup.ballsscrew(1);
 		launchermotors.Motorlauncher1(1);
 		launchermotors.Motorlauncher2(1);
-}
+		Timer.delay(5);
+	}
 	
 
 	
 //right ball points
-	public void rightbolierfar(double _Speed,  double _Turn){
+	public void rightbolierfar(){
 		drive._driveRobot(1, 0);
 		Timer.delay(3);
 		drive._driveRobot(1, 1);
@@ -62,9 +67,10 @@ public class Auto {
 		ballscrewup.ballsscrew(1);
 		launchermotors.Motorlauncher1(1);
 		launchermotors.Motorlauncher2(1);
-}
+		Timer.delay(5);
+	}
 	
-	public void rightboliermid(double _Speed,  double _Turn){
+	public void rightboliermid(){
 		drive._driveRobot(1, 0);
 		Timer.delay(3);
 		drive._driveRobot(1, 1);
@@ -72,9 +78,10 @@ public class Auto {
 		ballscrewup.ballsscrew(1);
 		launchermotors.Motorlauncher1(1);
 		launchermotors.Motorlauncher2(1);
-}
+		Timer.delay(5);
+	}
 	
-	public void rightbolierclose(double _Speed,  double _Turn){
+	public void rightbolierclose(){
 		drive._driveRobot(1, 0);
 		Timer.delay(3);
 		drive._driveRobot(1, 1);
@@ -82,36 +89,21 @@ public class Auto {
 		ballscrewup.ballsscrew(1);
 		launchermotors.Motorlauncher1(1);
 		launchermotors.Motorlauncher2(1);
-}
+		Timer.delay(5);
+	}
 	
 	
 	//gear points
-	public void gearOne(double _Speed,double _Turn){
-		drive._driveRobot(1, 1);}
-
-		public void geartwo(double _Speed,double _Turn){
-			drive._driveRobot(1,-1);
-			
+	public void gearOne(){
+		drive._driveRobot(1, 1);
+		Timer.delay(5);
 	}
-=======
-//	DriveTrain drive = new DriveTrain();
-//	GearHolder gear = new GearHolder();
-//	
-//	public void driveForward(double _Speed, double _Turn){
-//		drive._driveRobot(3, 0);
-//	}
-//
-//
-//	public void gearOne(double _Speed,double _Turn){
-//		drive._driveRobot(2,1);}
-//		
-//
-//		public void geartwo(double _Speed,double _Turn){
-//			drive._driveRobot(2,1);
-//			
-//	}
->>>>>>> dev
-
+		public void geartwo(){
+			drive._driveRobot(1,-1);
+		}
 	
-}
+}		
+		
+	
+
 
