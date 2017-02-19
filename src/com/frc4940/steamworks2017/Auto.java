@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Timer;
 //D@nte was here
 public class Auto {
 
+<<<<<<< HEAD
 
 	DriveTrain drive = new DriveTrain();
 	GearHolder gear = new GearHolder();
@@ -91,6 +92,24 @@ public class Auto {
 			drive._driveRobot(2,-1);
 			
 	}
+=======
+//	DriveTrain drive = new DriveTrain();
+//	GearHolder gear = new GearHolder();
+//	
+//	public void driveForward(double _Speed, double _Turn){
+//		drive._driveRobot(3, 0);
+//	}
+//
+//
+//	public void gearOne(double _Speed,double _Turn){
+//		drive._driveRobot(2,1);}
+//		
+//
+//		public void geartwo(double _Speed,double _Turn){
+//			drive._driveRobot(2,1);
+//			
+//	}
+>>>>>>> dev
 
 	
 }

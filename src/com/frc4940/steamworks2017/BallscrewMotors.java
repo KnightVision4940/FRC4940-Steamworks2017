@@ -6,12 +6,20 @@ public class BallscrewMotors {
 	
 	
 public BallscrewMotors(int CANport, int victorPort){
+<<<<<<< HEAD
 	 ballscrew = new CANTalon(CANport); 
+=======
+//	 ballscrew = new CANTalon(CANport); 
+>>>>>>> dev
 		 
 		 motorlauncher = new VictorSP(victorPort);
 	 }
 	
+<<<<<<< HEAD
  CANTalon ballscrew;
+=======
+// CANTalon ballscrew;
+>>>>>>> dev
  VictorSP motorlauncher;
  public void ballsscrew(double speed){
 	ballscrew.set(speed);

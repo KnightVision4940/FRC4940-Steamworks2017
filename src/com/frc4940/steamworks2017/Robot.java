@@ -1,9 +1,7 @@
 package com.frc4940.steamworks2017;
 
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 //import com.ctre.CANTalon; //currently unused; proper class to import to use the CAN speed controllers
@@ -93,6 +91,14 @@ public class Robot extends IterativeRobot {
 			// Put default auto code here
 			break;
 		}
+	}
+	
+	/**
+	 * This function initializes teleop
+	 */
+	@Override
+	public void teleopInit(){
+		teleop.init();
 	}
 
 	/**
