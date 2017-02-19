@@ -26,9 +26,8 @@ public class Map {
 		public static final int WINCH = 1;
 	}
 	
-	public class Auto{  
-		
-		
+	public class Auto{ 
+		public static final int DRIVE_FORWARD = 0;
 		public static final int TEST_AUTO = 999;
 	}
 	
