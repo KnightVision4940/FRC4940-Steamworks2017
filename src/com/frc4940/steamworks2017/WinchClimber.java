@@ -31,4 +31,8 @@ public class WinchClimber {
 	public int getWinchPosition(){
 		return _winch.getEncPosition();
 	}
-}
+
+
+		
+	}
+
