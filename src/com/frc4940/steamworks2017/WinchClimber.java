@@ -9,25 +9,8 @@ public class WinchClimber {
 		_winch = new CANTalon(_CANPort);
 	}
 	
-	DigitalInput limitSwitch = new DigitalInput (0);
-	
-	public void initEncoder(){
-		_winch.setEncPosition(0);
-		
+	public void setSpeed (double speed){		
+		_winch.set(speed/4);
 	}
-	
-	public void setSpeed (double speed){
 		
-		if (limitSwitch.get()){
-			_winch.set(0);
-		}
-		
-		else {
-			_winch.set(speed/4);
-		}
-	}
-	
-	public int getWinchPosition(){
-		return _winch.getEncPosition();
-	}		
 }
