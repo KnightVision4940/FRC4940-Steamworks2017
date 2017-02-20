@@ -16,8 +16,13 @@ public BallscrewMotors(int CANport, int victorPort, int victorPort2){
  VictorSP motorlauncher;
  VictorSP motorLauncher2;
  public void ballsscrew(double speed){
-	ballscrew.set(speed);
+	ballscrew.set(speed/4);
  }
+ 
+ public void ScrewEncoder(){
+	 ballscrew.getEncPosition();
+ }
+ 
 
  
 
