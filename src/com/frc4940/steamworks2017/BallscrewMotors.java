@@ -25,14 +25,15 @@ public class BallscrewMotors {
  
  public void ballsscrew(double speed){
 	ballscrew.set(speed/4);
+	if (limitswitch.get()) {
+		ballscrew.set(0);
+	}
+	 else {
+		 ballscrew.set(1);
+	 }
  }
  
- public void setSpeed (double speed){
-		
-		 if (limitswitch.get()) {
-			ballscrew.set(0);
-		}
-	}
+
  
  public void ScrewEncoder(){
 	 ballscrew.getEncPosition();
