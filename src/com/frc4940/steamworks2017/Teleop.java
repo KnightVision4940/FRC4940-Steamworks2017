@@ -2,21 +2,16 @@ package com.frc4940.steamworks2017;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 public class Teleop {
-
-	public Teleop(){
-	}
 	
 	public void run() {
 		//driving (triggers and left stick)
 		Map.drive._driveRobot(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
 		
-		//Map.gyro.printangle();
-		
 		//raising and lowering floor
-		if(Xbox.getXButton()){
+		if(Xbox.getBumper(Hand.kLeft)) {
 			Map.ballscrew.ballsscrew(1);
 		}
-		else if (Xbox.getYButton()){
+		else if (Xbox.getBumper(Hand.kRight)){
 			Map.ballscrew.ballsscrew(-1);
 		} 
 		else{
@@ -39,7 +34,6 @@ public class Teleop {
 	}	
 	
 	public void init() {
-		Map.gyro.calibrategyro();
 		Map.drive.disableSafety();
 	}
 }
