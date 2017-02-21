@@ -111,7 +111,6 @@ public class Robot extends IterativeRobot {
 	}
 	
 	
-	
 	/**
 	 * This function is called when test mode is initiated
 	 */

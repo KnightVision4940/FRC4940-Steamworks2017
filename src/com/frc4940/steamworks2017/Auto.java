@@ -1,24 +1,183 @@
 package com.frc4940.steamworks2017;
 
+import edu.wpi.first.wpilibj.Timer;
+//D@nte was here
 public class Auto {
+	
+	//just driving foward
+	public void _driveForward(){
+		Map.drive._driveRobot(1, 0);
+		Timer.delay(7);
+	}
+	
+	int autoMode = 0; 
+	
+	public void run(){
+		if (autoMode == 0){
+			Map.drive._driveRobot(1, 0);
+		}
+		else if (autoMode == 1){
+			Map.drive._driveRobot(1, 0);
+			Timer.delay(3);
+			Map.drive._driveRobot(1, -1);
+			Timer.delay(10);
+			Map.ballscrew.ballsscrew(1);
+			Map.ballscrew.Motorlauncher1(1);
+			Map.ballscrew.Motorlauncher2(1);
+			Timer.delay(5);
+		}
 
-//	DriveTrain drive = new DriveTrain();
-//	GearHolder gear = new GearHolder();
-//	
-//	public void driveForward(double _Speed, double _Turn){
-//		drive._driveRobot(3, 0);
-//	}
-//
-//
-//	public void gearOne(double _Speed,double _Turn){
-//		drive._driveRobot(2,1);}
-//		
-//
-//		public void geartwo(double _Speed,double _Turn){
-//			drive._driveRobot(2,1);
-//			
-//	}
+		//jack was here 
+
+
+		else if (autoMode == 2){
+			Map.drive._driveRobot(1, 0);
+			Timer.delay(3);
+			Map.drive._driveRobot(1, -1);
+			Timer.delay(5);
+			Map.ballscrew.ballsscrew(1);
+			Map.ballscrew.Motorlauncher1(1);
+			Map.ballscrew.Motorlauncher2(1);
+			Timer.delay(5);
+		}
+		else if (autoMode == 3){
+			Map.drive._driveRobot(1, 0);
+			Timer.delay(3);
+			Map.drive._driveRobot(1, -1);
+			Timer.delay(3);
+			Map.ballscrew.ballsscrew(1);
+			Map.ballscrew.Motorlauncher1(1);
+			Map.ballscrew.Motorlauncher2(1);
+			Timer.delay(5);
+		}
+		else if (autoMode == 4){
+			Map.drive._driveRobot(1, 0);
+			Timer.delay(3);
+			Map.drive._driveRobot(1, 1);
+			Timer.delay(10);
+			Map.ballscrew.ballsscrew(1);
+			Map.ballscrew.Motorlauncher1(1);
+			Map.ballscrew.Motorlauncher2(1);
+			Timer.delay(5);
+		}
+		else if (autoMode == 5){
+			Map.drive._driveRobot(1, 0);
+			Timer.delay(3);
+			Map.drive._driveRobot(1, 1);
+			Timer.delay(5);
+			Map.ballscrew.ballsscrew(1);
+			Map.ballscrew.Motorlauncher1(1);
+			Map.ballscrew.Motorlauncher2(1);
+			Timer.delay(5);
+		}
+		else if (autoMode == 6){
+			Map.drive._driveRobot(1, 0);
+			Timer.delay(3);
+			Map.drive._driveRobot(1, 1);
+			Timer.delay(3);
+			Map.ballscrew.ballsscrew(1);
+			Map.ballscrew.Motorlauncher1(1);
+			Map.ballscrew.Motorlauncher2(1);
+			Timer.delay(5);
+	    }
+		else if (autoMode == 7){ 
+			Map.drive._driveRobot(1, 1);
+			
+		}
+		else if (autoMode == 8){
+			Map.drive._driveRobot(1, -1);
+			
+		}
+		//boo! hehehe scared you!
+	}
+
 
 	
-}
+	//ball points left
+
+	//public void leftbolierfar(){
+		//Map.drive.__driveRobot(1, 0);
+		//Timer.delay(3);
+		//Map.drive.__driveRobot(1, -1);
+		//Timer.delay(10);
+		//Map.ballscrew.ballsscrew(1);
+		//Map.ballscrew.Motorlauncher1(1);
+		//Map.ballscrew.Motorlauncher2(1);
+		//Timer.delay(5);
+
+	//}
+
+
+	//public void leftboliermid(){
+		//Map.drive.__driveRobot(1, 0);
+		//Timer.delay(3);
+		//Map.drive.__driveRobot(1, -1);
+		//Timer.delay(5);
+		//Map.ballscrew.ballsscrew(1);
+		//Map.ballscrew.Motorlauncher1(1);
+		//Map.ballscrew.Motorlauncher2(1);
+		//Timer.delay(5);
+	//}
+	
+	
+
+	//public void leftbolierclose(){
+		//Map.drive.__driveRobot(1, 0);
+		//Timer.delay(3);
+		//Map.drive.__driveRobot(1, -1);
+		//Timer.delay(3);
+		//Map.ballscrew.ballsscrew(1);
+		//Map.ballscrew.Motorlauncher1(1);
+		//Map.ballscrew.Motorlauncher2(1);
+		//Timer.delay(5);
+	//}
+
+
+	//public void rightbolierfar(){
+		//Map.drive.__driveRobot(1, 0);
+		//Timer.delay(3);
+		//Map.drive.__driveRobot(1, 1);
+		//Timer.delay(10);
+		//Map.ballscrew.ballsscrew(1);
+		//Map.ballscrew.Motorlauncher1(1);
+		//Map.ballscrew.Motorlauncher2(1);
+		//Timer.delay(5);
+	//}
+	
+	//public void rightboliermid(){
+		//Map.drive.__driveRobot(1, 0);
+		//Timer.delay(3);
+		//Map.drive.__driveRobot(1, 1);
+		//Timer.delay(5);
+		//Map.ballscrew.ballsscrew(1);
+		//Map.ballscrew.Motorlauncher1(1);
+		//Map.ballscrew.Motorlauncher2(1);
+		//Timer.delay(5);
+	//}
+	
+	//public void rightbolierclose(){
+		//Map.drive.__driveRobot(1, 0);
+		//Timer.delay(3);
+		//Map.drive.__driveRobot(1, 1);
+		//Timer.delay(3);
+		//Map.ballscrew.ballsscrew(1);
+		//Map.ballscrew.Motorlauncher1(1);
+		//Map.ballscrew.Motorlauncher2(1);
+		//Timer.delay(5);
+	//}
+	
+	
+	//gear points
+	//public void gearOne(){
+		//Map.drive.__driveRobot(1, 1);
+		//Timer.delay(5);
+	//}
+		//public void geartwo(){
+			//Map.drive.__driveRobot(1,-1);
+		//}
+	
+}		
+		
+	
+
 

@@ -23,9 +23,5 @@ SmartDashboard.putBoolean("auto three", false);
 SmartDashboard.putBoolean("auto four", false);	
 SmartDashboard.putBoolean("auto five", false);
 SmartDashboard.putBoolean("auto six", false);
-
-	
-	
-	
-	}
+}
 }
