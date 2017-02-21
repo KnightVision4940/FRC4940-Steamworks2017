@@ -2,7 +2,7 @@ package com.frc4940.steamworks2017;
 import com.ctre.CANTalon;
 
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.VictorSP;;
+import edu.wpi.first.wpilibj.VictorSP;
 
 public class BallscrewMotors {
 	
@@ -28,7 +28,7 @@ public class BallscrewMotors {
 		ballscrew.set(0);
 	}
 	 else {
-		 ballscrew.set(speed/4);
+		 ballscrew.set(speed/2);
 	 }
  }
  
@@ -43,7 +43,7 @@ public class BallscrewMotors {
 
  //The ball launcher motors in fort of the ballscrew
  public void Motorlauncher1(double speed){
-	 motorlauncher.set(speed);
+	 motorlauncher.set(-speed);
  
 }
  public void Motorlauncher2(double speed){

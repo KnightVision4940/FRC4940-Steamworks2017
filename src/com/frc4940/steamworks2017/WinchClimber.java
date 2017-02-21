@@ -1,6 +1,5 @@
 package com.frc4940.steamworks2017;
 
-import edu.wpi.first.wpilibj.DigitalInput;
 import com.ctre.CANTalon;
 
 public class WinchClimber {
