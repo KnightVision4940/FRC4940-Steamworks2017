@@ -25,10 +25,8 @@ public class Robot extends IterativeRobot {
 	/**
 	 * VARIABLES
 	 */
-	final String defaultAuto = "Default";
-	final String customAuto = "My Auto";
-	String autoSelected;
-	SendableChooser<String> chooser = new SendableChooser<>();
+	
+	DashBoard db = new DashBoard();
 	
 	Teleop teleop = new Teleop();
 	Auto auto = new Auto();
@@ -42,9 +40,6 @@ public class Robot extends IterativeRobot {
 		/**
 		 * This adds buttons to select autonomous mode on the dashboard
 		 */
-		chooser.addDefault("Default Auto", defaultAuto);
-		chooser.addObject("My Auto", customAuto);
-		SmartDashboard.putData("Auto choices", chooser);
 		
 		
 	}
