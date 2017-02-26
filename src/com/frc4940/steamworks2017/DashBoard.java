@@ -29,7 +29,11 @@ public class DashBoard {
 		SmartDashboard.putBoolean("auto five", false);
 		SmartDashboard.putBoolean("auto six", false);
 
-	}
-	
-	
+SmartDashboard.putBoolean("auto one", true);
+SmartDashboard.putBoolean("auto two", false);
+SmartDashboard.putBoolean("auto three", false);
+SmartDashboard.putBoolean("auto four", false);	
+SmartDashboard.putBoolean("auto five", false);
+SmartDashboard.putBoolean("auto six", false);
+}
 }

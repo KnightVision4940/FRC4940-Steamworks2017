@@ -31,5 +31,13 @@ public class DriveTrain {
 		}
 	}
 	
+	public void enableSafety(){
+		wheels.setSafetyEnabled(true);
+	}
+	
+	public void disableSafety(){
+		wheels.setSafetyEnabled(false);
+	}
+	
 }
 //ps, jack was here *lenny face* 

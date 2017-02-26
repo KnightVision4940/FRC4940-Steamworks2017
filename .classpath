@@ -17,5 +17,12 @@
 	<classpathentry kind="lib" path="libs/NetworkTables.jar"/>
 	<classpathentry kind="lib" path="libs/opencv.jar"/>
 	<classpathentry kind="lib" path="libs/WPILib.jar"/>
+	<classpathentry kind="lib" path="libs/libCTRLibDriver.so"/>
+	<classpathentry kind="lib" path="libs/libCTRLibDriver.so.debug"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/cscore.jar"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/CTRLib.jar"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/NetworkTables.jar"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/opencv.jar"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/WPILib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
