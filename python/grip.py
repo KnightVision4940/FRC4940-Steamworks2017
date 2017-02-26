@@ -55,6 +55,9 @@ class GripPipeline:
         self.__filter_contours_contours = self.find_contours_output
         (self.filter_contours_output) = self.__filter_contours(self.__filter_contours_contours, self.__filter_contours_min_area, self.__filter_contours_min_perimeter, self.__filter_contours_min_width, self.__filter_contours_max_width, self.__filter_contours_min_height, self.__filter_contours_max_height, self.__filter_contours_solidity, self.__filter_contours_max_vertices, self.__filter_contours_min_vertices, self.__filter_contours_min_ratio, self.__filter_contours_max_ratio)
 
+        (self.bounding_box_output) = self.__find_bounding_box(self.filter_contours_output, source0)
+
+        return (self.bounding_box_output)
 
     @staticmethod
     def __hsv_threshold(input, hue, sat, val):
@@ -131,6 +134,15 @@ class GripPipeline:
                 continue
             output.append(contour)
         return output
+
+    @staticmethod
+    def __find_bounding_box(input_contours, img): # draws bounding boxes around each contour
+        bounding_box = img
+        for c in input_contours:
+            x,y,w,h = cv2.boundingRect(c)
+            bounding_box = cv2.rectangle(bounding_box, (x,y), (x+w, y+h), (0,255,0),2)
+        return bounding_box
+
 
 
 
