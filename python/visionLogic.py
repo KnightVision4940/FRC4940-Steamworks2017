@@ -6,6 +6,7 @@
 
 import cv2
 import numpy
+import math
 from grip import GripPipeline
 
 
@@ -14,7 +15,7 @@ class Vision:
 
     def pImg(self):
 
-        img = cv2.imread("C:\Users\KnightVision\Pictures\RPI vision testing\ledPicx\img1487302145_4.jpg", cv2.IMREAD_COLOR)  # temporary test code
+        img = cv2.imread("C:\Users\KnightVision\Pictures\RPI vision testing\ledPicx\img1487482502_11.jpg", cv2.IMREAD_COLOR)  # temporary test code
         if type(img) is numpy.ndarray:  # checks if image is not empty
             print("Processing . . . ")
             processedImg = self.gp.process(img)
@@ -24,10 +25,12 @@ class Vision:
             return 2
 
 
-    def angle(self, pImg):
-        print("Processing image . . . \n")
-        cv2.imwrite('newProcssedImg.jpg', pImg)
-        print("Done!")
+    def angle(self, u):
+        print("Calculating Angle . . . \n")
+        angle = math.degrees(math.atan((u-176)/298.7))
+        print("Angle: " + str(angle) + "\n")
+
+        print("DONE!")
 
 v = Vision()
 v.pImg()

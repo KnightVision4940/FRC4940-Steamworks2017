@@ -12,9 +12,9 @@ class GripPipeline:
         """initializes all values to presets or None if need to be set
         """
 
-        self.__hsv_threshold_hue = [0.0, 21.296939068686868]
+        self.__hsv_threshold_hue = [0.0, 22.296939068686868]
         self.__hsv_threshold_saturation = [0.0, 255.0]
-        self.__hsv_threshold_value = [71.85251944356685, 255.0]
+        self.__hsv_threshold_value = [50.0, 255.0]
 
         self.hsv_threshold_output = None
 
@@ -138,10 +138,29 @@ class GripPipeline:
     @staticmethod
     def __find_bounding_box(input_contours, img): # draws bounding boxes around each contour
         bounding_box = img
+
+        height, width, _ = bounding_box.shape
+        min_x, min_y = width, height
+        max_x = max_y = 0
+
         for c in input_contours:
             x,y,w,h = cv2.boundingRect(c)
-            bounding_box = cv2.rectangle(bounding_box, (x,y), (x+w, y+h), (0,255,0),2)
-        return bounding_box
+            min_x, max_x = min(x, min_x), max(x + w, max_x)
+            min_y, max_y = min(y, min_y), max(y + h, max_y)
+            bounding_box = cv2.rectangle(bounding_box, (x,y), (x+w, y+h), (255,255,255),2)
+
+        #draws box around both smaller bounding boxes
+        if max_x - min_x > 0 and max_y - min_y > 0:
+            avg_rect = cv2.rectangle(bounding_box, (min_x, min_y), (max_x, max_y), (255, 0, 0), 2)
+
+        #finds the center point of the overall bounding box, thus the center of the two rectangles
+        avg_x, avg_y = (min_x + max_x)/2, (min_y + max_y)/2
+        print(avg_x, avg_y)
+
+        print("Printing Image . . . \n")
+        cv2.imwrite('newProcssedImg.jpg', bounding_box) #print out image
+
+        return avg_x
 
 
 
