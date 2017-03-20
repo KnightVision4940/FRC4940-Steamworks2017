@@ -1,6 +1,7 @@
 import cv2
 import numpy
 import math
+import time
 from enum import Enum
 
 class GripPipeline:
@@ -161,7 +162,7 @@ class GripPipeline:
         print("Distance: " + str(dist))
 
         print("Printing Image . . . \n")
-        cv2.imwrite('newProcssedImg.jpg', bounding_box) #print out image
+        cv2.imwrite('p' + str(time.time()) + '.jpg', bounding_box) #print out image
 
         return [avg_x, dist]
 

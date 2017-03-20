@@ -7,6 +7,7 @@
 import cv2
 import numpy
 import math
+import time
 from grip import GripPipeline
 
 
@@ -15,7 +16,8 @@ class Vision:
 
     def pImg(self):
 
-        img = cv2.imread("C:\Users\KnightVision\Pictures\RPI vision testing\ledPicx\img1487521546_0.jpg", cv2.IMREAD_COLOR)  # temporary test code
+        img = self.grab()
+        # img = cv2.imread("C:\Users\KnightVision\Pictures\RPI vision testing\ledPicx\img1487521546_0.jpg", cv2.IMREAD_COLOR)  # temporary test code
         if type(img) is numpy.ndarray:  # checks if image is not empty
             print("Processing . . . ")
             cx, dist = self.gp.process(img)
@@ -33,5 +35,23 @@ class Vision:
         print(init_angle, raw_angle, angle)
         print("DONE!")
 
+    def grab(self):
+        result, im = cap.read()
+        return im
+
+    def reset_exposure(self):
+        os.system("v4l2-ctl -d /dev/video0 -c exposure_auto=1 -c exposure_absolute=0")
+        print("Setting exposure setting to 5 . . . ")
+        time.wait(1)
+        print("Done!")
+
+####################################
+#program begins here
 v = Vision()
-v.pImg()
+cap = cv2.VideoCapture(0)# start video capture
+# v.reset_exposure() #uncomment to set exposure before running script
+#continously capture and process images
+while True:
+    v.pImg()
+    time.sleep(0.125) #captures frames at 8fps
+cap.release()
