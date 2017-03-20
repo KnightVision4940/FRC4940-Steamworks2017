@@ -15,21 +15,22 @@ class Vision:
 
     def pImg(self):
 
-        img = cv2.imread("C:\Users\KnightVision\Pictures\RPI vision testing\ledPicx\img1487482502_11.jpg", cv2.IMREAD_COLOR)  # temporary test code
+        img = cv2.imread("C:\Users\KnightVision\Pictures\RPI vision testing\ledPicx\img1487521546_0.jpg", cv2.IMREAD_COLOR)  # temporary test code
         if type(img) is numpy.ndarray:  # checks if image is not empty
             print("Processing . . . ")
-            processedImg = self.gp.process(img)
-            self.angle(processedImg)
+            cx, dist = self.gp.process(img)
+            self.angle(cx, dist)
         else:
             print("ERROR: cv2 img is empty! || " + "testImg.jpg")
             return 2
 
 
-    def angle(self, u):
+    def angle(self, u, d):
         print("Calculating Angle . . . \n")
-        angle = math.degrees(math.atan((u-176)/298.7))
-        print("Angle: " + str(angle) + "\n")
-
+        raw_angle = math.degrees(math.atan((u-176)/298.7))
+        init_angle = math.degrees(math.atan(1.25/d))
+        angle = init_angle + raw_angle
+        print(init_angle, raw_angle, angle)
         print("DONE!")
 
 v = Vision()

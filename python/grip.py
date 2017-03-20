@@ -55,9 +55,9 @@ class GripPipeline:
         self.__filter_contours_contours = self.find_contours_output
         (self.filter_contours_output) = self.__filter_contours(self.__filter_contours_contours, self.__filter_contours_min_area, self.__filter_contours_min_perimeter, self.__filter_contours_min_width, self.__filter_contours_max_width, self.__filter_contours_min_height, self.__filter_contours_max_height, self.__filter_contours_solidity, self.__filter_contours_max_vertices, self.__filter_contours_min_vertices, self.__filter_contours_min_ratio, self.__filter_contours_max_ratio)
 
-        (self.bounding_box_output) = self.__find_bounding_box(self.filter_contours_output, source0)
+        (self.centerX, self.distance) = self.__find_bounding_box(self.filter_contours_output, source0)
 
-        return (self.bounding_box_output)
+        return (self.centerX, self.distance)
 
     @staticmethod
     def __hsv_threshold(input, hue, sat, val):
@@ -157,10 +157,13 @@ class GripPipeline:
         avg_x, avg_y = (min_x + max_x)/2, (min_y + max_y)/2
         print(avg_x, avg_y)
 
+        dist = 260.315/(max_x - min_x)
+        print("Distance: " + str(dist))
+
         print("Printing Image . . . \n")
         cv2.imwrite('newProcssedImg.jpg', bounding_box) #print out image
 
-        return avg_x
+        return [avg_x, dist]
 
 
 
