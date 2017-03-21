@@ -4,13 +4,7 @@ import edu.wpi.first.wpilibj.Timer;
 //D@nte was here
 public class Auto {
 	
-	//just driving foward
-	public void _driveForward(){
-		Map.drive._driveRobot(1, 0);
-		Timer.delay(7);
-	}
-	
-	int autoMode = 0; 
+	int autoMode = Map.Auto.GEARONE; 
 	
 	public void run(){
 		if (autoMode == 0){
@@ -80,13 +74,15 @@ public class Auto {
 			Map.ballscrew.Motorlauncher2(1);
 			Timer.delay(5);
 	    }
-		else if (autoMode == 7){ 
-			Map.drive._driveRobot(1, 1);
-			
-		}
 		else if (autoMode == 8){
 			Map.drive._driveRobot(1, -1);
 			
+		}
+		else if (autoMode == Map.Auto.GEARONE){
+			Map.drive.driveStraight();
+			Timer.delay(1);
+			Map.drive.polarDrive(0.5, -60);
+			Timer.delay(0.5);
 		}
 		//boo! hehehe scared you!
 	}

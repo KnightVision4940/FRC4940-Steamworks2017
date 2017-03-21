@@ -8,7 +8,6 @@ public class Map {
 																	Map.PWM.ROLLER_1, 
 																	Map.PWM.ROLLER_2);
 	public static WinchClimber climber = new WinchClimber(Map.CAN.WINCH);
-	public static Gyroscope gyro = new Gyroscope();
 	
 	public static void set(int _variable, int _value){
 		_variable = _value;

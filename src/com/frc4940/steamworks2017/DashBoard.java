@@ -1,39 +1,52 @@
 package com.frc4940.steamworks2017;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import java.util.EventObject;
+
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  
 
 
 public class DashBoard {
 
-	SendableChooser <String> chooser;
+	SmartDashboard dashboard; 
+	SendableChooser autoChooser;
+	NetworkTable table;
+	
+	double visionAngle;
+	boolean visionEnabled;
+	
+	public DashBoard(){
+		autoChooser = new SendableChooser();
+		autoChooser.addDefault("Drive Forward" , Map.Auto.DRIVE_FORWARD);
+		autoChooser.addObject("Gear (one)", Map.Auto.GEARONE);
+		SmartDashboard.putData("Auto mode chooser", autoChooser);
+		table = NetworkTable.getTable("SmartDashboard");
+		visionAngle = 0;
+		visionEnabled = false;
+	}
+	
+	public SendableChooser getChooser(){
+		return autoChooser;
+	}
 		
-	public static void board(){	
-		 
-		SmartDashboard.putNumber("drive left" ,8);
-		SmartDashboard.putNumber("Climbing Encoder", 9);
-		SmartDashboard.putNumber("drive right" ,7);
-		SmartDashboard.putNumber("ballscrew" , 4);
-		SmartDashboard.putNumber("balllauncher", 2);
-		SmartDashboard.putNumber("speed of drive train", 1-4);
-		SmartDashboard.putNumber("directionLeft", 10 );
-		SmartDashboard.putNumber("directionRight", 11 );
-		SmartDashboard.putNumber("gyro angle", 13 );
-		SmartDashboard.putNumber("encoder drive",14);
-		
-		
-		SmartDashboard.putBoolean("auto one", true);
-		SmartDashboard.putBoolean("auto two", false);
-		SmartDashboard.putBoolean("auto three", false);
-		SmartDashboard.putBoolean("auto four", false);	
-		SmartDashboard.putBoolean("auto five", false);
-		SmartDashboard.putBoolean("auto six", false);
-
-SmartDashboard.putBoolean("auto one", true);
-SmartDashboard.putBoolean("auto two", false);
-SmartDashboard.putBoolean("auto three", false);
-SmartDashboard.putBoolean("auto four", false);	
-SmartDashboard.putBoolean("auto five", false);
-SmartDashboard.putBoolean("auto six", false);
-}
-}
+	public void runBoard(){			
+		SmartDashboard.putNumber("angle to peg", getAngleToPeg());
+		SmartDashboard.putBoolean("isVisionEnabled", visionEnabled);
+		table.putBoolean("isVision", visionEnabled);
+	}
+	
+	public double getAngleToPeg(){
+		visionAngle = table.getNumber("angle", 0);
+		System.out.println("Angle to Peg: " + visionAngle);
+		return visionAngle;
+	}
+	
+	public boolean setVisionEnabled(boolean flag){
+		this.visionEnabled = flag;
+		return this.visionEnabled;
+	}
+}
