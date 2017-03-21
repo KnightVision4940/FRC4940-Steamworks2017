@@ -7,8 +7,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
- 
-
 
 public class DashBoard {
 
@@ -18,6 +16,7 @@ public class DashBoard {
 	
 	double visionAngle;
 	boolean visionEnabled;
+	int i;
 	
 	public DashBoard(){
 		autoChooser = new SendableChooser();
@@ -34,14 +33,15 @@ public class DashBoard {
 	}
 		
 	public void runBoard(){			
-		SmartDashboard.putNumber("angle to peg", getAngleToPeg());
+		SmartDashboard.putNumber("angle to peg", table.getNumber("helpMe", 32));
+		SmartDashboard.putNumber("YES", table.getNumber("pegAngle", 3));
 		SmartDashboard.putBoolean("isVisionEnabled", visionEnabled);
 		table.putBoolean("isVision", visionEnabled);
 	}
 	
 	public double getAngleToPeg(){
 		visionAngle = table.getNumber("angle", 0);
-		System.out.println("Angle to Peg: " + visionAngle);
+//		System.out.println("Angle to Peg: " + visionAngle);
 		return visionAngle;
 	}
 	

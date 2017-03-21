@@ -88,7 +88,7 @@ public class Auto {
 			Map.drive._driveRobot(1, -1);
 		}
 		else if (autoMode == Map.Auto.GEARONE){
-			Map.drive.driveStraight();
+			Map.drive.driveStraight(0.5);
 			Timer.delay(1);
 			Map.drive.polarDrive(0.5, -60);
 			Timer.delay(0.5);
