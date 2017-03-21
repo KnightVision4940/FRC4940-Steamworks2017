@@ -4,17 +4,22 @@ import edu.wpi.first.wpilibj.Timer;
 //D@nte was here
 public class Auto {
 	
-	//just driving foward
-	public void _driveForward(){
-		Map.drive._driveRobot(1, 0);
-		Timer.delay(7);
+	Timer clock;
+	int autoMode = Map.Auto.DRIVE_FORWARD; 
+	
+	public void init(){
+		clock = new Timer();
+		clock.reset();
+		clock.start();
+		Map.drive.disableSafety();
 	}
 	
-	int autoMode = 0; 
-	
 	public void run(){
-		if (autoMode == 0){
-			Map.drive._driveRobot(1, 0);
+		System.out.println(Map.drive.getGyro().getAngle());
+		if (autoMode == Map.Auto.DRIVE_FORWARD){
+			Map.drive.tankDrive(0.73, 0.8);
+			Timer.delay(1.15);
+			Map.drive.tankDrive(0, 0);
 		}
 		else if (autoMode == 1){
 			Map.drive._driveRobot(1, 0);
@@ -80,13 +85,13 @@ public class Auto {
 			Map.ballscrew.Motorlauncher2(1);
 			Timer.delay(5);
 	    }
-		else if (autoMode == 7){ 
-			Map.drive._driveRobot(1, 1);
-			
-		}
 		else if (autoMode == 8){
 			Map.drive._driveRobot(1, -1);
-			
+		}
+		else if (autoMode == Map.Auto.GEARONE){
+			Map.drive.tankDrive(0.73, 0.8);
+			Timer.delay(1.15);
+			Map.drive.tankDrive(0, 0);
 		}
 		//boo! hehehe scared you!
 	}

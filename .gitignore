@@ -8,7 +8,7 @@ out/
 tmp/
 .settings/
 .loadpath
-/.idea
+*/.idea
 
 # Toast/GradleRIO
 run/
@@ -31,3 +31,8 @@ Thumbs.db
 
 # directory for XML generated after running junit tests through ant
 junit/
+
+#vision testing
+*.jpg
+*.png
+*.pyc

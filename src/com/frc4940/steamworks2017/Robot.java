@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-//import com.ctre.CANTalon; //currently unused; proper class to import to use the CAN speed controllers
+import com.ctre.CANTalon; //currently unused; proper class to import to use the CAN speed controllers
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,28 +25,19 @@ public class Robot extends IterativeRobot {
 	/**
 	 * VARIABLES
 	 */
-	final String defaultAuto = "Default";
-	final String customAuto = "My Auto";
-	String autoSelected;
-	SendableChooser<String> chooser = new SendableChooser<>();
+
+	DashBoard db = new DashBoard();
 	
 	Teleop teleop = new Teleop();
 	Auto auto = new Auto();
-
+	
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
 	@Override
 	public void robotInit() {
-		/**
-		 * This adds buttons to select autonomous mode on the dashboard
-		 */
-		chooser.addDefault("Default Auto", defaultAuto);
-		chooser.addObject("My Auto", customAuto);
-		SmartDashboard.putData("Auto choices", chooser);
-		
-		
+		Map.drive.getGyro().calibrategyro();
 	}
 
 	/**
@@ -62,10 +53,8 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		autoSelected = chooser.getSelected();
-		// autoSelected = SmartDashboard.getString("Auto Selector",
-		// defaultAuto);
-		System.out.println("Auto selected: " + autoSelected);
+		auto.init();
+		auto.run();
 	}
 
 	/**
@@ -82,15 +71,6 @@ public class Robot extends IterativeRobot {
 		 * 2) Don't write the code directly in here, but in a seperate Autonomous class. all that we write here
 		 * 		will be a single function call, where we pass in the string autoSelected and do all this in that class
 		 */
-		switch (autoSelected) {
-		case customAuto:
-			// Put custom auto code here
-			break;
-		case defaultAuto:
-		default:
-			// Put default auto code here
-			break;
-		}
 	}
 	
 	/**
@@ -107,7 +87,8 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
-		 teleop.run();
+		teleop.run();
+		db.runBoard();
 	}
 	
 	
