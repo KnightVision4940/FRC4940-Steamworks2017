@@ -4,11 +4,21 @@ import edu.wpi.first.wpilibj.Timer;
 //D@nte was here
 public class Auto {
 	
-	int autoMode = Map.Auto.GEARONE; 
+	Timer clock;
+	int autoMode = Map.Auto.DRIVE_FORWARD; 
+	
+	public void init(){
+		clock = new Timer();
+		clock.reset();
+		clock.start();
+	}
 	
 	public void run(){
-		if (autoMode == 0){
-			Map.drive._driveRobot(1, 0);
+		if (autoMode == Map.Auto.DRIVE_FORWARD){
+			if(clock.get() < 2){
+				Map.drive.driveStraight(0.5);
+			}
+			Map.drive.driveStraight(0.0);
 		}
 		else if (autoMode == 1){
 			Map.drive._driveRobot(1, 0);
@@ -76,7 +86,6 @@ public class Auto {
 	    }
 		else if (autoMode == 8){
 			Map.drive._driveRobot(1, -1);
-			
 		}
 		else if (autoMode == Map.Auto.GEARONE){
 			Map.drive.driveStraight();

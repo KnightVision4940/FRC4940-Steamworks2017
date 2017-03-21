@@ -53,10 +53,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		// autoSelected = SmartDashboard.getString("Auto Selector",
-		// defaultAuto);
-		Map.drive.driveStraight();
-		Map.drive._driveRobot(0, 0);
+		auto.init();
 	}
 
 	/**
@@ -73,6 +70,8 @@ public class Robot extends IterativeRobot {
 		 * 2) Don't write the code directly in here, but in a seperate Autonomous class. all that we write here
 		 * 		will be a single function call, where we pass in the string autoSelected and do all this in that class
 		 */
+
+		auto.run();
 	}
 	
 	/**
