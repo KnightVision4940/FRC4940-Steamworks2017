@@ -11,14 +11,15 @@ public class Auto {
 		clock = new Timer();
 		clock.reset();
 		clock.start();
+		Map.drive.disableSafety();
 	}
 	
 	public void run(){
+		System.out.println(Map.drive.getGyro().getAngle());
 		if (autoMode == Map.Auto.DRIVE_FORWARD){
-			if(clock.get() < 2){
-				Map.drive.driveStraight(0.5);
-			}
-			Map.drive.driveStraight(0.0);
+			Map.drive.tankDrive(0.73, 0.8);
+			Timer.delay(1.15);
+			Map.drive.tankDrive(0, 0);
 		}
 		else if (autoMode == 1){
 			Map.drive._driveRobot(1, 0);
@@ -88,10 +89,9 @@ public class Auto {
 			Map.drive._driveRobot(1, -1);
 		}
 		else if (autoMode == Map.Auto.GEARONE){
-			Map.drive.driveStraight(0.5);
-			Timer.delay(1);
-			Map.drive.polarDrive(0.5, -60);
-			Timer.delay(0.5);
+			Map.drive.tankDrive(0.73, 0.8);
+			Timer.delay(1.15);
+			Map.drive.tankDrive(0, 0);
 		}
 		//boo! hehehe scared you!
 	}

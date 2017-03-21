@@ -61,9 +61,12 @@ public class DriveTrain {
 		}
 	}
 	
+	public void tankDrive(double speedL, double speedR){
+		wheels.tankDrive(speedL, speedR);
+	}
+	
 	public void driveStraight(double speed){
-		double currentAngle = this.gyro.getAngle();
-		wheels.drive(speed, 0.3 * -currentAngle);
+		wheels.tankDrive(speed*0.9375, speed);
 	}
 	
 	public void enableSafety(){
