@@ -5,7 +5,7 @@ public class Teleop {
 	
 	public void run() {
 		//driving (triggers and left stick)
-		Map.drive._driveRobot(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
+		Map.drive.smartDrive(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
 		
 		//raising and lowering floor
 		if(Xbox.getBumper(Hand.kLeft)) {
@@ -38,7 +38,7 @@ public class Teleop {
 	}
 	
 	public double getGyroAngle(){
-		return gyro.getAngle();
+		return Map.drive.getGyro().getAngle();
 	}
 }
 

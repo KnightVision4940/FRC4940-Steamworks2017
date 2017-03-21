@@ -52,8 +52,10 @@ class Vision:
         print("Done!")
 
     def push_data(self):
-        self.sd.putNumber("pegAngle", self.angle)
-        self.sd.putNumber("distance", self.dist)
+        if self.angle > 0.1 or self.angle < -0.1:
+            self.sd.putNumber("pegAngle", self.angle)
+        if self.dist > 0:
+            self.sd.putNumber("distance", self.dist)
 
 ####################################
 #program begins here

@@ -37,9 +37,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
-		/**
-		 * This adds buttons to select autonomous mode on the dashboard
-		 */
+		Map.drive.getGyro().calibrategyro();
 	}
 
 	/**
@@ -57,6 +55,8 @@ public class Robot extends IterativeRobot {
 	public void autonomousInit() {
 		// autoSelected = SmartDashboard.getString("Auto Selector",
 		// defaultAuto);
+		Map.drive.driveStraight();
+		Map.drive._driveRobot(0, 0);
 	}
 
 	/**
@@ -89,7 +89,8 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
-		 teleop.run();
+		teleop.run();
+		db.runBoard();
 	}
 	
 	
