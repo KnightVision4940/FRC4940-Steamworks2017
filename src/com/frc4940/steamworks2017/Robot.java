@@ -53,10 +53,8 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		// autoSelected = SmartDashboard.getString("Auto Selector",
-		// defaultAuto);
-		Map.drive.driveStraight();
-		Map.drive._driveRobot(0, 0);
+		auto.init();
+		auto.run();
 	}
 
 	/**
