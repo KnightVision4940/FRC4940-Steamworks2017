@@ -50,12 +50,12 @@ public class DriveTrain {
 	}
 	
 	//Autonomous Driving Functions
-	public void polarDrive(double _speed, double targetAngle){
+	public void polarDrive(double targetAngle){
 		double currentAngle = this.gyro.getAngle();
 		double angularVelocity = (currentAngle-targetAngle)/10;
 		wheels.tankDrive(angularVelocity, -angularVelocity);
 		if (angularVelocity < 0.1 || angularVelocity > -0.1){
-			polarDrive(_speed, targetAngle);
+			polarDrive(targetAngle);
 		} else {
 			wheels.tankDrive(0, 0);
 		}

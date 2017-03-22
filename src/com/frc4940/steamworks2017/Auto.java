@@ -11,6 +11,7 @@ public class Auto {
 		clock = new Timer();
 		clock.reset();
 		clock.start();
+		Map.drive.gyro.reset();
 		Map.drive.disableSafety();
 	}
 	
@@ -85,8 +86,13 @@ public class Auto {
 			Map.ballscrew.Motorlauncher2(1);
 			Timer.delay(5);
 	    }
-		else if (autoMode == 8){
-			Map.drive._driveRobot(1, -1);
+		else if (autoMode == Map.Auto.GEARTWO){
+			Map.drive.tankDrive(0.73, 0.8);
+			Timer.delay(1.15);
+			Map.drive.tankDrive(0, 0);
+			Map.drive.polarDrive(-60);
+			Map.drive.tankDrive(0.73, 0.8);
+			Timer.delay(1.15);
 		}
 		else if (autoMode == Map.Auto.GEARONE){
 			Map.drive.tankDrive(0.73, 0.8);
