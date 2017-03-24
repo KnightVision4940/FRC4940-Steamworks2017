@@ -21,7 +21,7 @@ public class Auto {
 		System.out.println(Map.drive.getGyro().getAngle());
 		if (autoMode == Map.Auto.DRIVE_FORWARD){
 			Map.drive.tankDrive(0.73, 0.8);
-			Timer.delay(2);
+			Timer.delay(3.5);
 			Map.drive.tankDrive(0, 0);
 		}
 		else if (autoMode == 1){
@@ -99,8 +99,8 @@ public class Auto {
 			Map.drive.tankDrive(0, 0);
 		}
 		else if (autoMode == Map.Auto.GEARONE){
-			Map.drive.tankDrive(0.73, 0.8);
-			Timer.delay(1.3);
+			Map.drive.tankDrive(0.67, 0.8);
+			Timer.delay(1.5);
 			Map.drive.tankDrive(0, 0);
 		}
 		//boo! hehehe scared you!

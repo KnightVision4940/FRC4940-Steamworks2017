@@ -19,8 +19,8 @@ public class Teleop {
 		}
 		
 		if(Xbox.getBButton()){
-			Map.ballscrew.Motorlauncher1(1);
-			Map.ballscrew.Motorlauncher2(1);
+			Map.ballscrew.Motorlauncher1(-1);
+			Map.ballscrew.Motorlauncher2(-1);
 		} else{
 			Map.ballscrew.Motorlauncher1(0);
 			Map.ballscrew.Motorlauncher2(0);

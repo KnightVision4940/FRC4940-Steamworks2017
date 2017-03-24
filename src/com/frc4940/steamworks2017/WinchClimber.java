@@ -9,7 +9,7 @@ public class WinchClimber {
 	}
 	
 	public void setSpeed (double speed){		
-		_winch.set(speed * 0.8);
+		_winch.set(speed);
 	}
 		
 }
