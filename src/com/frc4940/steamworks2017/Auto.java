@@ -1,25 +1,27 @@
 package com.frc4940.steamworks2017;
 
 import edu.wpi.first.wpilibj.Timer;
-//D@nte was here
+
 public class Auto {
 	
 	Timer clock;
 	int autoMode = Map.Auto.DRIVE_FORWARD; 
 	
-	public void init(){
+	public void init(int autoNum){
 		clock = new Timer();
 		clock.reset();
 		clock.start();
 		Map.drive.gyro.reset();
 		Map.drive.disableSafety();
+		
+		this.autoMode = autoNum;
 	}
 	
 	public void run(){
 		System.out.println(Map.drive.getGyro().getAngle());
 		if (autoMode == Map.Auto.DRIVE_FORWARD){
 			Map.drive.tankDrive(0.73, 0.8);
-			Timer.delay(1.15);
+			Timer.delay(2);
 			Map.drive.tankDrive(0, 0);
 		}
 		else if (autoMode == 1){
@@ -91,12 +93,14 @@ public class Auto {
 			Timer.delay(1.15);
 			Map.drive.tankDrive(0, 0);
 			Map.drive.polarDrive(-60);
+			Map.drive.tankDrive(0, 0);
 			Map.drive.tankDrive(0.73, 0.8);
 			Timer.delay(1.15);
+			Map.drive.tankDrive(0, 0);
 		}
 		else if (autoMode == Map.Auto.GEARONE){
 			Map.drive.tankDrive(0.73, 0.8);
-			Timer.delay(1.15);
+			Timer.delay(1.3);
 			Map.drive.tankDrive(0, 0);
 		}
 		//boo! hehehe scared you!

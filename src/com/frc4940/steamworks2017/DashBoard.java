@@ -22,7 +22,9 @@ public class DashBoard {
 		autoChooser = new SendableChooser();
 		autoChooser.addDefault("Drive Forward" , Map.Auto.DRIVE_FORWARD);
 		autoChooser.addObject("Gear (one)", Map.Auto.GEARONE);
+		autoChooser.addObject("Gear (right)", Map.Auto.GEARTWO);
 		SmartDashboard.putData("Auto mode chooser", autoChooser);
+		
 		table = NetworkTable.getTable("SmartDashboard");
 		visionAngle = 0;
 		visionEnabled = false;
@@ -48,5 +50,9 @@ public class DashBoard {
 	public boolean setVisionEnabled(boolean flag){
 		this.visionEnabled = flag;
 		return this.visionEnabled;
+	}
+	
+	public int getAutoNumber(){
+		return (int)autoChooser.getSelected();
 	}
 }
