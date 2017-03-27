@@ -19,8 +19,8 @@ public class Teleop {
 		}
 		
 		if(Xbox.getBButton()){
-			Map.ballscrew.Motorlauncher1(1);
-			Map.ballscrew.Motorlauncher2(1);
+			Map.ballscrew.Motorlauncher1(-1);
+			Map.ballscrew.Motorlauncher2(-1);
 		} else{
 			Map.ballscrew.Motorlauncher1(0);
 			Map.ballscrew.Motorlauncher2(0);
@@ -28,7 +28,10 @@ public class Teleop {
 	
 		if (Xbox.getAButton()){ 
 			Map.climber.setSpeed(-1);
-		} else {
+		} else if (-1*Math.pow(Math.abs(Xbox.getY(Hand.kRight)), 2) < -0.05){
+			Map.climber.setSpeed(-1*Math.pow(Math.abs(Xbox.getY(Hand.kRight)), 2));
+		}
+		else {
 			Map.climber.setSpeed(0);
 		}
 	}	

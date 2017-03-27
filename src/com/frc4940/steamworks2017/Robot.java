@@ -53,7 +53,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		auto.init();
+		auto.init(db.getAutoNumber());
 		auto.run();
 	}
 
