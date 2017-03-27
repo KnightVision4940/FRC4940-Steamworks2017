@@ -28,7 +28,10 @@ public class Teleop {
 	
 		if (Xbox.getAButton()){ 
 			Map.climber.setSpeed(-1);
-		} else {
+		} else if (-1*Math.pow(Math.abs(Xbox.getY(Hand.kRight)), 2) < -0.05){
+			Map.climber.setSpeed(-1*Math.pow(Math.abs(Xbox.getY(Hand.kRight)), 2));
+		}
+		else {
 			Map.climber.setSpeed(0);
 		}
 	}	
