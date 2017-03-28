@@ -53,8 +53,8 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		auto.init();
-		auto.run();
+		auto.init(db.getAutoNumber());
+//		auto.run();
 	}
 
 	/**
@@ -71,6 +71,7 @@ public class Robot extends IterativeRobot {
 		 * 2) Don't write the code directly in here, but in a seperate Autonomous class. all that we write here
 		 * 		will be a single function call, where we pass in the string autoSelected and do all this in that class
 		 */
+		auto.run();
 	}
 	
 	/**

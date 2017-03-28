@@ -24,7 +24,7 @@ public class BallscrewMotors {
  
  
  public void ballsscrew(double speed){
-	if (limitswitch.get()) {
+	if (limitswitch.get() && speed > 0) {
 		ballscrew.set(0);
 	}
 	 else {
