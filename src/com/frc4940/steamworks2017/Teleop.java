@@ -5,7 +5,11 @@ public class Teleop {
 	
 	public void run() {
 		//driving (triggers to drive, and left stick to turn)
-		Map.drive.smartDrive(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
+		if(XtremePro.getThumb()){
+			Map.drive.smartDrive(XtremePro.getYAxis(), XtremePro.getTwist());
+		} else {
+			Map.drive.smartDrive(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
+		}
 		
 		//raising and lowering floor (Bumper Buttons)
 		if(Xbox.getBumper(Hand.kLeft)) {
