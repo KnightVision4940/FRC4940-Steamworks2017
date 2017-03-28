@@ -58,6 +58,7 @@ public class DriveTrain {
 		System.out.println("Ang " + angularVelocity);
 		
 		if(angularVelocity < 0.1 && angularVelocity > -0.1){
+			wheels.tankDrive(0, 0);
 			System.out.println("Auto Done!");
 			return 1;
 		}
@@ -76,7 +77,7 @@ public class DriveTrain {
 	}
 	
 	public void driveStraight(double speed){
-		wheels.tankDrive(speed*0.9375, speed);
+		wheels.tankDrive(speed*0.9, speed);
 	}
 	
 	public void enableSafety(){
