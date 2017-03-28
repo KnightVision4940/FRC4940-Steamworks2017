@@ -5,7 +5,8 @@ import edu.wpi.first.wpilibj.Timer;
 public class Auto {
 	
 	Timer clock;
-	int autoMode = Map.Auto.DRIVE_FORWARD; 
+	int autoMode = Map.Auto.GEARTHREE; 
+	int autoStage = 0;
 	
 	public void init(int autoNum){
 		clock = new Timer();
@@ -15,6 +16,7 @@ public class Auto {
 		Map.drive.disableSafety();
 		
 		this.autoMode = autoNum;
+		this.autoStage = 0;
 	}
 	
 	public void run(){
@@ -102,6 +104,24 @@ public class Auto {
 			Map.drive.tankDrive(0.70, 0.8);
 			Timer.delay(3.5);
 			Map.drive.tankDrive(0, 0);
+		}
+		else if (autoMode == Map.Auto.GEARTHREE){
+//			Map.drive.tankDrive(0.73, 0.8);
+//			Timer.delay(1.15);
+//			Map.drive.tankDrive(0, 0);
+			if (this.autoStage == 0){
+				int rotDone = Map.drive.polarDrive(90);
+				if (rotDone == 1){
+					this.autoStage += 1;
+				}
+			} else{
+				Map.drive.brake();
+				System.out.println(clock.get());
+			}
+			
+//			Map.drive.tankDrive(0.73, 0.8);
+//			Timer.delay(1.15);
+//			Map.drive.tankDrive(0, 0);
 		}
 		//boo! hehehe scared you!
 	}

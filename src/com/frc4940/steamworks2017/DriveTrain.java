@@ -50,19 +50,29 @@ public class DriveTrain {
 	}
 	
 	//Autonomous Driving Functions
-	public void polarDrive(double targetAngle){
+	public int polarDrive(double targetAngle){
+		//get angle, set spinning velocity
 		double currentAngle = this.gyro.getAngle();
-		double angularVelocity = (currentAngle-targetAngle)/10;
-		wheels.tankDrive(angularVelocity, -angularVelocity);
-		if (angularVelocity < 0.1 || angularVelocity > -0.1){
-			polarDrive(targetAngle);
-		} else {
-			wheels.tankDrive(0, 0);
+		double angularVelocity = (targetAngle-currentAngle);
+		angularVelocity = this.clamp(angularVelocity, -1, 1);
+		System.out.println("Ang " + angularVelocity);
+		
+		if(angularVelocity < 0.1 && angularVelocity > -0.1){
+			System.out.println("Auto Done!");
+			return 1;
+		}
+		else{
+			wheels.tankDrive(0.45 * angularVelocity, -0.45 * angularVelocity);
+			return 0;
 		}
 	}
 	
 	public void tankDrive(double speedL, double speedR){
 		wheels.tankDrive(speedL, speedR);
+	}
+	
+	public void brake(){
+		wheels.tankDrive(0, 0);
 	}
 	
 	public void driveStraight(double speed){
@@ -78,6 +88,10 @@ public class DriveTrain {
 	}
 	
 	public Gyroscope getGyro(){ return this.gyro; }
+	
+	double clamp(double value, double min, double max) {
+		   return Math.min(Math.max(value, min), max);
+	}
 	
 }
 //ps, jack was here *lenny face* 
