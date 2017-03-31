@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.Timer;
 public class DriveTrain {
 //RobotDrive object
 	RobotDrive wheels;
-	Gyroscope gyro; 
+	Gyroscope gyro;
 	
 	public DriveTrain(){
 		wheels = new RobotDrive(Map.PWM.LEFTBACKWHEEL,
@@ -78,6 +78,11 @@ public class DriveTrain {
 	
 	public void driveStraight(double speed){
 		wheels.tankDrive(speed*0.85, speed);
+	}
+	
+	public void driveStraightGyro(double speed, double initAngle){
+		double kp = (gyro.getAngle() - initAngle)/30;
+		wheels.tankDrive((speed*.85)-kp, speed+kp);
 	}
 	
 	public void enableSafety(){

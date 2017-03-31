@@ -31,6 +31,8 @@ public class Robot extends IterativeRobot {
 	Teleop teleop = new Teleop();
 	Auto auto = new Auto();
 	
+	double testInitAngle;
+	
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -38,6 +40,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		Map.drive.getGyro().calibrategyro();
+		this.testInitAngle = 0;
 	}
 
 	/**
@@ -98,7 +101,9 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void testInit() {
-		
+		Map.drive.gyro.reset();
+		Map.drive.enableSafety();
+		this.testInitAngle = Map.drive.gyro.getAngle();
 	}
 
 	/**
@@ -106,7 +111,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void testPeriodic() {
-		
+		Map.drive.driveStraightGyro(0.5, this.testInitAngle);
 	}
 }
 //stew was here ;)
