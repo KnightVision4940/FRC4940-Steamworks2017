@@ -21,7 +21,7 @@ public class DashBoard {
 	public DashBoard(){
 		autoChooser = new SendableChooser();
 		autoChooser.addDefault("Drive Forward" , Map.Auto.DRIVE_FORWARD);
-		autoChooser.addObject("Gear (one)", Map.Auto.GEARONE);
+		autoChooser.addObject("Gear (Middle)", Map.Auto.GEARONE);
 		autoChooser.addObject("Gear (right)", Map.Auto.GEARTWO);
 		autoChooser.addObject("Gear (Left)", Map.Auto.GEARTHREE);
 		SmartDashboard.putData("Auto mode chooser", autoChooser);

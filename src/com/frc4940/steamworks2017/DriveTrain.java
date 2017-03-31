@@ -63,7 +63,7 @@ public class DriveTrain {
 			return 1;
 		}
 		else{
-			wheels.tankDrive(0.45 * angularVelocity, -0.45 * angularVelocity);
+			wheels.tankDrive(0.65 * angularVelocity, -0.65 * angularVelocity);
 			return 0;
 		}
 	}
@@ -77,7 +77,7 @@ public class DriveTrain {
 	}
 	
 	public void driveStraight(double speed){
-		wheels.tankDrive(speed*0.9, speed);
+		wheels.tankDrive(speed*0.85, speed);
 	}
 	
 	public void enableSafety(){

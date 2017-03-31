@@ -43,7 +43,7 @@ public class Map {
 		public static final int RIGHTBOILERCLOSE = 6;
 		public static final int GEARONE = 7;
 		public static final int GEARTWO = 8;
-		public static final int GEARTHREE = 420;
+		public static final int GEARTHREE = 99;
 	}
 	
 	public class Encoder{

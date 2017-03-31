@@ -23,10 +23,13 @@ public class Auto {
 	
 	public void run(){
 		System.out.println(Map.drive.getGyro().getAngle());
+		/**
+		 * DRIVING FORWARDS (NO GEAR)
+		 */
 		if (autoMode == Map.Auto.DRIVE_FORWARD){
 			if (this.autoStage == 0){
 				Map.drive.driveStraight(0.8);
-				if(clock.get() - this.lastStageTime > 2){
+				if(clock.get() - this.lastStageTime > 2.5){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
 					this.autoStage++;
@@ -35,74 +38,13 @@ public class Auto {
 				Map.drive.brake();
 			}
 		}
-		else if (autoMode == 1){
-			Map.drive._driveRobot(1, 0);
-			Timer.delay(3);
-			Map.drive._driveRobot(1, -1);
-			Timer.delay(10);
-			Map.ballscrew.ballsscrew(1);
-			Map.ballscrew.Motorlauncher1(1);
-			Map.ballscrew.Motorlauncher2(1);
-			Timer.delay(5);
-		}
-
-		//jack was here 
-
-
-		else if (autoMode == 2){
-			Map.drive._driveRobot(1, 0);
-			Timer.delay(3);
-			Map.drive._driveRobot(1, -1);
-			Timer.delay(5);
-			Map.ballscrew.ballsscrew(1);
-			Map.ballscrew.Motorlauncher1(1);
-			Map.ballscrew.Motorlauncher2(1);
-			Timer.delay(5);
-		}
-		else if (autoMode == 3){
-			Map.drive._driveRobot(1, 0);
-			Timer.delay(3);
-			Map.drive._driveRobot(1, -1);
-			Timer.delay(3);
-			Map.ballscrew.ballsscrew(1);
-			Map.ballscrew.Motorlauncher1(1);
-			Map.ballscrew.Motorlauncher2(1);
-			Timer.delay(5);
-		}
-		else if (autoMode == 4){
-			Map.drive._driveRobot(1, 0);
-			Timer.delay(3);
-			Map.drive._driveRobot(1, 1);
-			Timer.delay(10);
-			Map.ballscrew.ballsscrew(1);
-			Map.ballscrew.Motorlauncher1(1);
-			Map.ballscrew.Motorlauncher2(1);
-			Timer.delay(5);
-		}
-		else if (autoMode == 5){
-			Map.drive._driveRobot(1, 0);
-			Timer.delay(3);
-			Map.drive._driveRobot(1, 1);
-			Timer.delay(5);
-			Map.ballscrew.ballsscrew(1);
-			Map.ballscrew.Motorlauncher1(1);
-			Map.ballscrew.Motorlauncher2(1);
-			Timer.delay(5);
-		}
-		else if (autoMode == 6){
-			Map.drive._driveRobot(1, 0);
-			Timer.delay(3);
-			Map.drive._driveRobot(1, 1);
-			Timer.delay(3);
-			Map.ballscrew.ballsscrew(1);
-			Map.ballscrew.Motorlauncher1(1);
-			Map.ballscrew.Motorlauncher2(1);
-			Timer.delay(5);
-	    }
+		/**
+		 * RIGHT GEAR
+		 */
 		else if (autoMode == Map.Auto.GEARTWO){
 			if (this.autoStage == 0){
 				Map.drive.driveStraight(0.8);
-				if(clock.get() - this.lastStageTime > 2){
+				if(clock.get() - this.lastStageTime > 1.35){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
 					this.autoStage++;
@@ -115,19 +57,7 @@ public class Auto {
 					this.autoStage++;
 				}
 			} else if (this.autoStage == 2){
-				Map.drive.driveStraight(0.8);
-				if(clock.get() - this.lastStageTime > 1.3){
-					Map.drive.brake();
-					this.lastStageTime = clock.get();
-					this.autoStage++;
-				}
-			} else {
-				Map.drive.brake();
-			}
-		}
-		else if (autoMode == Map.Auto.GEARONE){
-			if (this.autoStage == 0){
-				Map.drive.driveStraight(0.8);
+				Map.drive.driveStraight(0.6);
 				if(clock.get() - this.lastStageTime > 5){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
@@ -137,10 +67,28 @@ public class Auto {
 				Map.drive.brake();
 			}
 		}
+		/**
+		 * MIDDLE GEAR
+		 */
+		else if (autoMode == Map.Auto.GEARONE){
+			if (this.autoStage == 0){
+				Map.drive.driveStraight(0.8);
+				if(clock.get() - this.lastStageTime > 7){
+					Map.drive.brake();
+					this.lastStageTime = clock.get();
+					this.autoStage++;
+				}
+			} else {
+				Map.drive.brake();
+			}
+		}
+		/**
+		 * LEFT GEAR
+		 */
 		else if (autoMode == Map.Auto.GEARTHREE){
 			if (this.autoStage == 0){
 				Map.drive.driveStraight(0.8);
-				if(clock.get() - this.lastStageTime > 2){
+				if(clock.get() - this.lastStageTime > 1.35){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
 					this.autoStage++;
@@ -153,8 +101,8 @@ public class Auto {
 					this.autoStage++;
 				}
 			} else if (this.autoStage == 2){
-				Map.drive.driveStraight(0.8);
-				if(clock.get() - this.lastStageTime > 1.3){
+				Map.drive.driveStraight(0.6);
+				if(clock.get() - this.lastStageTime > 6){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
 					this.autoStage++;
