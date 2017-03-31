@@ -30,6 +30,7 @@ public class Robot extends IterativeRobot {
 	
 	Teleop teleop = new Teleop();
 	Auto auto = new Auto();
+	CamServers cam = new CamServers();
 	
 	double testInitAngle;
 	
@@ -41,6 +42,7 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		Map.drive.getGyro().calibrategyro();
 		this.testInitAngle = 0;
+		cam.camInit();
 	}
 
 	/**

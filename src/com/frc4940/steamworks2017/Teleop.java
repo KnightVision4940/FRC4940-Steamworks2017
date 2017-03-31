@@ -47,7 +47,7 @@ public class Teleop {
 	
 	public void init() {
 		Map.drive.disableSafety();
-		Map.drive.gyro.reset();
+		 
 	}
 	
 	public double getGyroAngle(){
