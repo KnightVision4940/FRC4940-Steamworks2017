@@ -46,6 +46,7 @@ public class Map {
 		public static final int GEARTHREE = 99;
 		public static final int GEARONE_GYRO = 13;
 		public static final int FASTASFUCKBOY = 420;
+		public static final int SUPA_HOT_FIRE = 69;
 	}
 	
 	public class Encoder{

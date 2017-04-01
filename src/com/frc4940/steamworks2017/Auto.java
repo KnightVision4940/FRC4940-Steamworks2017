@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.Timer;
 public class Auto {
 	
 	Timer clock;
-	int autoMode = Map.Auto.GEARTHREE; 
+	int autoMode = Map.Auto.FASTASFUCKBOY; 
 	int autoStage = 0;
 	double lastStageTime = 0;
 	double initAngle = 0;
@@ -138,6 +138,19 @@ public class Auto {
 			if (this.autoStage == 0){
 				Map.drive.pureStraightGyro(0.7, this.initAngle);
 				if(clock.get() - this.lastStageTime > 5){
+					Map.drive.brake();
+					this.lastStageTime = clock.get();
+					this.autoStage++;
+				}
+			} else {
+				Map.drive.brake();
+		
+			}
+		}
+		else if (autoMode == Map.Auto.SUPA_HOT_FIRE){
+			if (this.autoStage == 0){
+				Map.drive.pureStraightGyro(1.0, this.initAngle);
+				if(clock.get() - this.lastStageTime > 14){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
 					this.autoStage++;
