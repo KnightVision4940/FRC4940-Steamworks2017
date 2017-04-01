@@ -24,6 +24,8 @@ public class DashBoard {
 		autoChooser.addObject("Gear (Middle)", Map.Auto.GEARONE);
 		autoChooser.addObject("Gear (right)", Map.Auto.GEARTWO);
 		autoChooser.addObject("Gear (Left)", Map.Auto.GEARTHREE);
+		autoChooser.addObject("GEAR(GYRO BIG BOY)", Map.Auto.GEARONE_GYRO);
+		autoChooser.addObject("STEAMPOWERED STEAMPOWERED STEAMPOWERED", Map.Auto.FASTASFUCKBOY);
 		SmartDashboard.putData("Auto mode chooser", autoChooser);
 		
 		table = NetworkTable.getTable("SmartDashboard");

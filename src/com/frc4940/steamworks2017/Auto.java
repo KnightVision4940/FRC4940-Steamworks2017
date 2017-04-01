@@ -8,6 +8,7 @@ public class Auto {
 	int autoMode = Map.Auto.GEARTHREE; 
 	int autoStage = 0;
 	double lastStageTime = 0;
+	double initAngle = 0;
 	
 	public void init(int autoNum){
 		clock = new Timer();
@@ -19,6 +20,7 @@ public class Auto {
 		this.autoMode = autoNum;
 		this.autoStage = 0;
 		this.lastStageTime = 0;
+		this.initAngle = Map.drive.getGyro().getAngle();
 	}
 	
 	public void run(){
@@ -28,7 +30,7 @@ public class Auto {
 		 */
 		if (autoMode == Map.Auto.DRIVE_FORWARD){
 			if (this.autoStage == 0){
-				Map.drive.driveStraight(0.8);
+				Map.drive.driveStraight(0.4);
 				if(clock.get() - this.lastStageTime > 2.5){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
@@ -51,14 +53,15 @@ public class Auto {
 				}
 			}
 			else if (this.autoStage == 1){
-				int rotDone = Map.drive.polarDrive(-30);
+				int rotDone = Map.drive.polarDrive(-60);
 				if (rotDone == 1){
 					this.lastStageTime = clock.get();
 					this.autoStage++;
+					this.initAngle = Map.drive.getGyro().getAngle();
 				}
 			} else if (this.autoStage == 2){
-				Map.drive.driveStraight(0.6);
-				if(clock.get() - this.lastStageTime > 5){
+				Map.drive.pureStraightGyro(0.55, this.initAngle);
+				if(clock.get() - this.lastStageTime > 4){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
 					this.autoStage++;
@@ -72,7 +75,7 @@ public class Auto {
 		 */
 		else if (autoMode == Map.Auto.GEARONE){
 			if (this.autoStage == 0){
-				Map.drive.driveStraight(0.8);
+				Map.drive.driveStraight(0.4);
 				if(clock.get() - this.lastStageTime > 7){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
@@ -95,14 +98,15 @@ public class Auto {
 				}
 			}
 			else if (this.autoStage == 1){
-				int rotDone = Map.drive.polarDrive(30);
+				int rotDone = Map.drive.polarDrive(60);
 				if (rotDone == 1){
 					this.lastStageTime = clock.get();
 					this.autoStage++;
+					this.initAngle = Map.drive.getGyro().getAngle();
 				}
 			} else if (this.autoStage == 2){
-				Map.drive.driveStraight(0.6);
-				if(clock.get() - this.lastStageTime > 6){
+				Map.drive.pureStraightGyro(0.55, this.initAngle);
+				if(clock.get() - this.lastStageTime > 4){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
 					this.autoStage++;
@@ -111,7 +115,40 @@ public class Auto {
 				Map.drive.brake();
 			}
 		}
-		//boo! hehehe scared you!
+		
+		/**
+		 * MIDDLE GEAR WITH GYROSCOPE
+		 */
+		else if (autoMode == Map.Auto.GEARONE_GYRO){
+			if (this.autoStage == 0){
+				Map.drive.driveStraightGyro(0.5, this.initAngle);
+				if(clock.get() - this.lastStageTime > 9){
+					Map.drive.brake();
+					this.lastStageTime = clock.get();
+					this.autoStage++;
+				}
+			} else {
+				Map.drive.brake();
+			}
+		}
+		/**
+		 * SANIC BOY
+		 */
+		else if (autoMode == Map.Auto.FASTASFUCKBOY){
+			if (this.autoStage == 0){
+				Map.drive.pureStraightGyro(0.7, this.initAngle);
+				if(clock.get() - this.lastStageTime > 5){
+					Map.drive.brake();
+					this.lastStageTime = clock.get();
+					this.autoStage++;
+				}
+			} else {
+				Map.drive.brake();
+		
+			}
+		}
+		//rip steam power, dang electricity 
+		
 	}
 
 

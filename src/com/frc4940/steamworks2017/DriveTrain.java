@@ -63,7 +63,7 @@ public class DriveTrain {
 			return 1;
 		}
 		else{
-			wheels.tankDrive(0.65 * angularVelocity, -0.65 * angularVelocity);
+			wheels.tankDrive(0.6 * angularVelocity, -0.6 * angularVelocity);
 			return 0;
 		}
 	}
@@ -77,12 +77,17 @@ public class DriveTrain {
 	}
 	
 	public void driveStraight(double speed){
-		wheels.tankDrive(speed*0.85, speed);
+		wheels.tankDrive(speed*.96, speed);
 	}
 	
 	public void driveStraightGyro(double speed, double initAngle){
 		double kp = (gyro.getAngle() - initAngle)/30;
-		wheels.tankDrive((speed*.85)-kp, speed+kp);
+		wheels.tankDrive((speed*0.96)-kp, speed+kp);
+	}
+	
+	public void pureStraightGyro(double speed, double initAngle){
+		double kp = (gyro.getAngle() - initAngle)/30;
+		wheels.tankDrive((speed)-kp, speed+kp);
 	}
 	
 	public void enableSafety(){
