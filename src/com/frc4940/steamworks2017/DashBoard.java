@@ -26,6 +26,7 @@ public class DashBoard {
 		autoChooser.addObject("Gear (right)", Map.Auto.GEARTWO);
 		autoChooser.addObject("Gear (Left)", Map.Auto.GEARTHREE);
 		autoChooser.addObject("GEAR(GYRO BIG BOY)", Map.Auto.GEARONE_GYRO);
+		autoChooser.addObject("__TEST", Map.Auto.TEST);
 		autoChooser.addObject("!!$$!! SUPA HOT AND DANGEROUZ !!$$!!", Map.Auto.SUPA_HOT_FIRE);
 		SmartDashboard.putData("Auto mode chooser", autoChooser);
 		

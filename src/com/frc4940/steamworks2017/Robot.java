@@ -32,6 +32,8 @@ public class Robot extends IterativeRobot {
 	Auto auto = new Auto();
 	CamServers cam = new CamServers();
 	
+	int testAutoMode;
+	
 	double testInitAngle;
 	
 	/**
@@ -113,7 +115,6 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void testPeriodic() {
-		Map.drive.driveStraightGyro(0.5, this.testInitAngle);
 	}
 }
 //stew was here ;)
