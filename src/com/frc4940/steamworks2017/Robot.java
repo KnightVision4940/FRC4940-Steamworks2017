@@ -30,6 +30,11 @@ public class Robot extends IterativeRobot {
 	
 	Teleop teleop = new Teleop();
 	Auto auto = new Auto();
+	CamServers cam = new CamServers();
+	
+	int testAutoMode;
+	
+	double testInitAngle;
 	
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -38,6 +43,8 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		Map.drive.getGyro().calibrategyro();
+		this.testInitAngle = 0;
+		cam.camInit();
 	}
 
 	/**
@@ -54,7 +61,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void autonomousInit() {
 		auto.init(db.getAutoNumber());
-		auto.run();
+//		auto.run();
 	}
 
 	/**
@@ -71,6 +78,7 @@ public class Robot extends IterativeRobot {
 		 * 2) Don't write the code directly in here, but in a seperate Autonomous class. all that we write here
 		 * 		will be a single function call, where we pass in the string autoSelected and do all this in that class
 		 */
+		auto.run();
 	}
 	
 	/**
@@ -97,7 +105,9 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void testInit() {
-		
+		Map.drive.gyro.reset();
+		Map.drive.enableSafety();
+		this.testInitAngle = Map.drive.gyro.getAngle();
 	}
 
 	/**
@@ -105,7 +115,6 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void testPeriodic() {
-		
 	}
 }
 //stew was here ;)

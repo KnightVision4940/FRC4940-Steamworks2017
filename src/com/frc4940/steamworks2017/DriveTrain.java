@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.Timer;
 public class DriveTrain {
 //RobotDrive object
 	RobotDrive wheels;
-	Gyroscope gyro; 
+	Gyroscope gyro;
 	
 	public DriveTrain(){
 		wheels = new RobotDrive(Map.PWM.LEFTBACKWHEEL,
@@ -50,14 +50,21 @@ public class DriveTrain {
 	}
 	
 	//Autonomous Driving Functions
-	public void polarDrive(double targetAngle){
+	public int polarDrive(double targetAngle){
+		//get angle, set spinning velocity
 		double currentAngle = this.gyro.getAngle();
-		double angularVelocity = (currentAngle-targetAngle)/10;
-		wheels.tankDrive(angularVelocity, -angularVelocity);
-		if (angularVelocity < 0.1 || angularVelocity > -0.1){
-			polarDrive(targetAngle);
-		} else {
+		double angularVelocity = (targetAngle-currentAngle);
+		angularVelocity = this.clamp(angularVelocity, -1, 1);
+		System.out.println("Ang " + angularVelocity);
+		
+		if(angularVelocity < 0.07 && angularVelocity > -0.07){
 			wheels.tankDrive(0, 0);
+			System.out.println("Auto Done!");
+			return 1;
+		}
+		else{
+			wheels.tankDrive(0.57 * angularVelocity, -0.57 * angularVelocity);
+			return 0;
 		}
 	}
 	
@@ -65,8 +72,22 @@ public class DriveTrain {
 		wheels.tankDrive(speedL, speedR);
 	}
 	
+	public void brake(){
+		wheels.tankDrive(0, 0);
+	}
+	
 	public void driveStraight(double speed){
-		wheels.tankDrive(speed*0.9375, speed);
+		wheels.tankDrive(speed*.96, speed);
+	}
+	
+	public void driveStraightGyro(double speed, double initAngle){
+		double kp = (gyro.getAngle() - initAngle)/30;
+		wheels.tankDrive((speed*0.96)-kp, speed+kp);
+	}
+	
+	public void pureStraightGyro(double speed, double initAngle){
+		double kp = (gyro.getAngle() - initAngle)/30;
+		wheels.tankDrive((speed)-kp, speed+kp);
 	}
 	
 	public void enableSafety(){
@@ -78,6 +99,10 @@ public class DriveTrain {
 	}
 	
 	public Gyroscope getGyro(){ return this.gyro; }
+	
+	double clamp(double value, double min, double max) {
+		   return Math.min(Math.max(value, min), max);
+	}
 	
 }
 //ps, jack was here *lenny face* 

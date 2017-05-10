@@ -33,7 +33,7 @@ public class Map {
 		public static final int WINCH = 1;
 	}
 	
-	public class Auto{ 
+	public class Auto{
 		public static final int DRIVE_FORWARD = 0;
 		public static final int LEFTBOILERFAR = 1;
 		public static final int LEFTBOILERMID = 2;
@@ -43,6 +43,11 @@ public class Map {
 		public static final int RIGHTBOILERCLOSE = 6;
 		public static final int GEARONE = 7;
 		public static final int GEARTWO = 8;
+		public static final int GEARTHREE = 99;
+		public static final int GEARONE_GYRO = 13;
+		public static final int FASTASFUCKBOY = 420;
+		public static final int SUPA_HOT_FIRE = 69;
+		public static final int TEST = 26;
 	}
 	
 	public class Encoder{
