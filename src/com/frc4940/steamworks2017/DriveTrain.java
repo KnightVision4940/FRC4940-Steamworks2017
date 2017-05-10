@@ -57,13 +57,13 @@ public class DriveTrain {
 		angularVelocity = this.clamp(angularVelocity, -1, 1);
 		System.out.println("Ang " + angularVelocity);
 		
-		if(angularVelocity < 0.1 && angularVelocity > -0.1){
+		if(angularVelocity < 0.07 && angularVelocity > -0.07){
 			wheels.tankDrive(0, 0);
 			System.out.println("Auto Done!");
 			return 1;
 		}
 		else{
-			wheels.tankDrive(0.6 * angularVelocity, -0.6 * angularVelocity);
+			wheels.tankDrive(0.57 * angularVelocity, -0.57 * angularVelocity);
 			return 0;
 		}
 	}
