@@ -1,11 +1,17 @@
-#FIRST Steamworks 2017 - FRC4940
+#
+Goose, by FRC team 4940
 ---
-###Important Links
-* [WPIlib documentation](http://first.wpi.edu/FRC/roborio/release/docs/java/)
-* [General step-by-step guides](http://wpilib.screenstepslive.com/s/4485)
-* [FRC reddit](http://reddit.com/r/frc)
-* [ChiefDelphi (general FRC forums)](https://www.chiefdelphi.com/forums/index.php?)
-* [FIRST Steamworks manual PDF](https://firstfrc.blob.core.windows.net/frc2017/Manual/2017FRCGameSeasonManual.pdf)
+
+This is the **official** repository of FRC team 4940 Knight Vision Robotics for the 2017 season. Happy coding!
 
 ---
-This is the **"""official"""** repository of FRC team 4940 Knight Vision Robotics for the 2017 season. Happy coding!
+### Photos
+![Goose](https://pbs.twimg.com/media/C8LxksgUwAEpKW2.jpg)
+
+### About Goose
+* 6-wheel tank drive
+* Primarily collects and delivers gears
+* Can shoot fuel into low boiler
+* Climbs up a velcro rope using a which mounted at the top of Goose.
+* Has camera set up for dashboard streaming, originally intended for vision processing.
+* Can perform autonomous by delivering gear to any of the three pegs.
