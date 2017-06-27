@@ -1,5 +1,14 @@
 package com.frc4940.steamworks2017;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+
+/**
+ * 
+ * @author KnightVision
+ *
+ * Gyroscope.java
+ * Wrapper for gyroscope functionality
+ */
+
 public class Gyroscope {
 	
 	ADXRS450_Gyro gyro;

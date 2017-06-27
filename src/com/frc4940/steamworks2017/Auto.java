@@ -2,10 +2,17 @@ package com.frc4940.steamworks2017;
 
 import edu.wpi.first.wpilibj.Timer;
 
+/**
+ * 
+ * @author KnightVision
+ *
+ * Auto.java
+ * Contains all code used to run the various autonomous modes.
+ */
 public class Auto {
 	
 	Timer clock;
-	int autoMode = Map.Auto.FASTASFUCKBOY; 
+	int autoMode = Map.Auto.GEARMID_GYRO; 
 	int autoStage = 0;
 	double lastStageTime = 0;
 	double initAngle = 0;
@@ -69,7 +76,7 @@ public class Auto {
 				}
 			} else if (this.autoStage == 3){
 				Map.drive.pureStraightGyro(0.6, this.initAngle);
-				if(clock.get() - this.lastStageTime > 7){
+				if(clock.get() - this.lastStageTime > 4){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
 					this.autoStage++;
@@ -81,7 +88,7 @@ public class Auto {
 		/**
 		 * MIDDLE GEAR
 		 */
-		else if (autoMode == Map.Auto.GEARONE){
+		else if (autoMode == Map.Auto.GEARMID){
 			if (this.autoStage == 0){
 				Map.drive.driveStraight(0.4);
 				if(clock.get() - this.lastStageTime > 7){
@@ -122,7 +129,7 @@ public class Auto {
 				}
 			} else if (this.autoStage == 3){
 				Map.drive.pureStraightGyro(0.6, this.initAngle);
-				if(clock.get() - this.lastStageTime > 7){
+				if(clock.get() - this.lastStageTime > 4){
 					Map.drive.brake();
 					this.lastStageTime = clock.get();
 					this.autoStage++;
@@ -135,22 +142,7 @@ public class Auto {
 		/**
 		 * MIDDLE GEAR WITH GYROSCOPE
 		 */
-		else if (autoMode == Map.Auto.GEARONE_GYRO){
-			if (this.autoStage == 0){
-				Map.drive.driveStraightGyro(0.5, this.initAngle);
-				if(clock.get() - this.lastStageTime > 9){
-					Map.drive.brake();
-					this.lastStageTime = clock.get();
-					this.autoStage++;
-				}
-			} else {
-				Map.drive.brake();
-			}
-		}
-		/**
-		 * SANIC BOY
-		 */
-		else if (autoMode == Map.Auto.FASTASFUCKBOY){
+		else if (autoMode == Map.Auto.GEARMID_GYRO){
 			if (this.autoStage == 0){
 				Map.drive.pureStraightGyro(0.7, this.initAngle);
 				if(clock.get() - this.lastStageTime > 5){
@@ -163,7 +155,45 @@ public class Auto {
 		
 			}
 		}
-		else if (autoMode == Map.Auto.SUPA_HOT_FIRE){
+		/**
+		 * SANIC BOY
+		 */
+		else if (autoMode == Map.Auto.GEARMID_FAST){
+//			
+			if (this.autoStage == 0){
+				Map.drive.pureStraightGyro(0.75, this.initAngle);
+				if(clock.get() - this.lastStageTime > 12){
+					Map.drive.brake();
+					this.lastStageTime = clock.get();
+					this.autoStage++;
+				}
+			} else if (this.autoStage == 1){
+				int rotDone = Map.drive.polarDrive(180);
+				if (rotDone == 1){
+					this.lastStageTime = clock.get();
+					this.autoStage++;
+					this.initAngle = Map.drive.getGyro().getAngle();
+				}
+			} else if (this.autoStage == 2){
+				Map.drive.brake();
+				if(clock.get() - this.lastStageTime > 0.5){
+					Map.drive.brake();
+					this.lastStageTime = clock.get();
+					this.autoStage++;
+					this.initAngle = Map.drive.getGyro().getAngle();
+				}
+			} else if (this.autoStage == 3){
+				Map.drive.pureStraightGyro(0.75, this.initAngle);
+				if(clock.get() - this.lastStageTime > 12){
+					Map.drive.brake();
+					this.lastStageTime = clock.get();
+					this.autoStage++;
+				}
+			} else {
+				Map.drive.brake();
+			}
+		}
+		else if (autoMode == Map.Auto.FULL_FIELD_SPRINT){
 			if (this.autoStage == 0){
 				Map.drive.pureStraightGyro(1.0, this.initAngle);
 				if(clock.get() - this.lastStageTime > 14){

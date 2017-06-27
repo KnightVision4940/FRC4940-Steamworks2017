@@ -1,8 +1,13 @@
 package com.frc4940.steamworks2017;
 
+/**
+ * 
+ * @author KnightVision
+ *
+ * Map.java
+ * Contains all the static constants and object references to be used through the rest of the code
+ */
 public class Map {
-	
-	//everything used to control the parts of the robot will be contained here and statically accessed elsewhere
 	public static DriveTrain drive = new DriveTrain();
 	public static BallscrewMotors ballscrew = new BallscrewMotors(Map.CAN.BALLSCREW, 
 																	Map.PWM.ROLLER_1, 
@@ -41,13 +46,13 @@ public class Map {
 		public static final int RIGHTBOILERFAR = 4;
 		public static final int RIGHTBOILERMID = 5;
 		public static final int RIGHTBOILERCLOSE = 6;
-		public static final int GEARONE = 7;
+		public static final int GEARMID = 7;
 		public static final int GEARTWO = 8;
-		public static final int GEARTHREE = 99;
-		public static final int GEARONE_GYRO = 13;
-		public static final int FASTASFUCKBOY = 420;
-		public static final int SUPA_HOT_FIRE = 69;
-		public static final int TEST = 26;
+		public static final int GEARTHREE = 9;
+		public static final int GEARMID_GYRO = 10;
+		public static final int GEARMID_FAST = 11;
+		public static final int FULL_FIELD_SPRINT = 12;
+		public static final int TEST = -1;
 	}
 	
 	public class Encoder{

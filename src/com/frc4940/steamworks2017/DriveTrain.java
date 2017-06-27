@@ -3,19 +3,38 @@ package com.frc4940.steamworks2017;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Timer;
 
+/**
+ * 
+ * @author KnightVision
+ *
+ * DriveTrain.java
+ * Manages control functions of the drivetrain
+ */
+
 public class DriveTrain {
-//RobotDrive object
-	RobotDrive wheels;
-	Gyroscope gyro;
+
+	RobotDrive wheels; //RobotDrive object
+	Gyroscope gyro; //gyroscope
+	protected double bearing;
+	protected double heading;
 	
 	public DriveTrain(){
 		wheels = new RobotDrive(Map.PWM.LEFTBACKWHEEL,
 				Map.PWM.LEFTFRONTWHEEL,
 				Map.PWM.RIGHTBACKWHEEL,
 				Map.PWM.RIGHTFRONTWHEEL);
-		gyro = new Gyroscope(); 
+		gyro = new Gyroscope();
+		bearing = 0.0;
+		heading = this.gyro.getAngle();
 	}
-  
+	
+	public void init(){
+		
+		bearing = this.gyro.getAngle();
+		heading = this.gyro.getAngle();
+		
+	}
+	
 	//Method for driving robot
 	//Should use in auto
 	public void _driveRobot(double _Speed, double _Turn){
@@ -48,6 +67,19 @@ public class DriveTrain {
 			wheels.drive(0, 0); 
 		}
 	}
+	
+	//automatically reverse steering when going in reverse for teleop
+		public void smartDriveGyro(double speed, double _Turn){
+			if(speed < 0){
+				_Turn *= -1;
+			}
+			
+			this.bearing += 3*_Turn;
+			this.heading = gyro.getAngle();
+			
+			double kp = (bearing - heading)/30;
+			wheels.tankDrive((speed)-kp, speed+kp);
+		}
 	
 	//Autonomous Driving Functions
 	public int polarDrive(double targetAngle){

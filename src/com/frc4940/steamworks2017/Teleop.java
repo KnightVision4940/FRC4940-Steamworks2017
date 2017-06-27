@@ -1,6 +1,13 @@
 package com.frc4940.steamworks2017;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 
+/**
+ * 
+ * @author KnightVision
+ *
+ * Teleop.java
+ * Contains all methods related to teleop
+ */
 public class Teleop {
 	
 	public void run() {
@@ -8,7 +15,8 @@ public class Teleop {
 //		if(XtremePro.getThumb())
 //			Map.drive.smartDrive(-XtremePro.getYAxis(), XtremePro.getTwist());
 //		else
-			Map.drive.smartDrive(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
+		Map.drive.smartDrive(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
+//		Map.drive.smartDriveGyro(-Xbox.getTriggers(), Xbox.getx(Hand.kLeft));
 		
 		//raising and lowering floor (Bumper Buttons)
 		if(Xbox.getBumper(Hand.kLeft)) {
@@ -46,8 +54,7 @@ public class Teleop {
 	}	
 	
 	public void init() {
-		Map.drive.disableSafety();
-		 
+		Map.drive.init();
 	}
 	
 	public double getGyroAngle(){
